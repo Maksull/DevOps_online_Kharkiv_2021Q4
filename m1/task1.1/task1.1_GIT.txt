@@ -1,0 +1,13 @@
+d1d53c1 HEAD@{0}: merge develop: Fast-forward
+0ed6bd7 HEAD@{1}: checkout: moving from develop to master
+d1d53c1 HEAD@{2}: merge styles: Merge made by the 'recursive' strategy.
+cff648d HEAD@{3}: merge images: Fast-forward
+0ed6bd7 HEAD@{4}: checkout: moving from styles to develop
+5db83b8 HEAD@{5}: commit: Add style.css
+0ed6bd7 HEAD@{6}: checkout: moving from develop to styles
+0ed6bd7 HEAD@{7}: checkout: moving from images to develop
+cff648d HEAD@{8}: commit: Add iages insode index.html
+373edf3 HEAD@{9}: commit: Create empt index.html and download 3 images
+0ed6bd7 HEAD@{10}: checkout: moving from develop to images
+0ed6bd7 HEAD@{11}: checkout: moving from master to develop
+0ed6bd7 HEAD@{12}: commit (initial): Create readme.txt
