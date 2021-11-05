@@ -41,13 +41,35 @@ Then I changed index.html:
 </body>
 </html>
 ```
+And made **commit**:
+```
+git add *
+git commit "Change index.html
+```
 Then I created one more branch with styles and checkout on it:
 ```
 git checkout -b styles
 ```
 And add styles to index.html:
 ```
+body{
+background-color:lightblue;
+}
 
+h1{
+color:lightgreen;
+font-size:12px;
+}
+
+img{
+width:200px;
+height:200px;
+}
+```
+And made **commit**:
+```
+git add *
+git commit -m "Add styles"
 ```
 Then we returned to the develop branch:
 git checkout develop
