@@ -1,5 +1,8 @@
-In the beginning we created an GitHub account. After that we created private repository. Next strep was clone this repo to our workstation. We created develop branch and checkout on it using: 
+In the beginning we created an **GitHub account**. After that I created private repository. Next strep was clone this repo to my workstation. 
+We created develop branch and checkout on it using: 
+```
 git checkout -b develop
+```
 Then we created index.html using :
 git commit -m "Test message"
 After that we created a new branch and checkout on it:
