@@ -41,9 +41,14 @@ Then I changed index.html:
 </body>
 </html>
 ```
-Then we created one more branch and checkout on it:
+Then I created one more branch with styles and checkout on it:
+```
 git checkout -b styles
-And did some things
+```
+And add styles to index.html:
+```
+
+```
 Then we returned to the develop branch:
 git checkout develop
 Where we merged our styles and images branches: 
