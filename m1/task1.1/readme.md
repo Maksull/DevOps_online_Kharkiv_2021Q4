@@ -3,8 +3,15 @@ I created **develop branch** and checkout on it using:
 ```
 git checkout -b develop
 ```
-Then we created index.html using :
+Then I created empty index.html using :
+```
+touch index.html
+```
+And then I made **add** and **commit**:
+```
+git add *
 git commit -m "Test message"
+```
 After that we created a new branch and checkout on it:
 git checkout -b images
 And did some thins.
