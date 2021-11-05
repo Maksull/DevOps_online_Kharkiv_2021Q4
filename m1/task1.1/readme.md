@@ -1,4 +1,4 @@
-In the beginning we created an **GitHub account**. After that I created **private repository**. Next strep was clone this repo to my workstation. 
+In the beginning we created an ***GitHub account***. After that I created **private repository**. Next strep was clone this repo to my workstation. 
 I created **develop branch** and checkout on it using: 
 ```
 git checkout -b develop
@@ -12,9 +12,35 @@ And then I made **add** and **commit**:
 git add *
 git commit -m "Test message"
 ```
-After that we created a new branch and checkout on it:
+After that I **created a new branch and checkout on it**:
+```
 git checkout -b images
-And did some thins.
+```
+And downloand three images in new directory and **commit** everything:
+```
+mkdir images
+git add *
+git commit -m "Download 3 images"
+```
+Then I changed index.html:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 1</title>
+<link rel="stylesheet" href="styles/mystyle.css">
+</head>
+<body>
+
+<h1>This is a H1</h1>
+
+<img src="images/img1.jpeg">
+<img src="images/img2.jpeg">
+<img src="images/img3.jpeg">
+
+</body>
+</html>
+```
 Then we created one more branch and checkout on it:
 git checkout -b styles
 And did some things
