@@ -1,5 +1,5 @@
-In the beginning we created an **GitHub account**. After that I created private repository. Next strep was clone this repo to my workstation. 
-We created develop branch and checkout on it using: 
+In the beginning we created an **GitHub account**. After that I created **private repository**. Next strep was clone this repo to my workstation. 
+I created **develop branch** and checkout on it using: 
 ```
 git checkout -b develop
 ```
