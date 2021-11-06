@@ -36,6 +36,6 @@ Then I cloned it and made group, that contains these two machines:<br/>
 ![Cloning VM](screenshots/Cloning%20VM.png)<br/>
 ![Group with VMs](screenshots/Group%20with%20VMs.png)<br/>
 To create group in command line you can use:<br/>
-VBoxManage modifyvm "vm01" --groups "/TestGroup"
+VBoxManage modifyvm "vm01" --groups "/TestGroup"<br/>
 To detach vm from the group you can use:<br/>
 VBoxManage modifyvm "vm01" --groups ""
