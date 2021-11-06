@@ -21,4 +21,21 @@ There are **two main hypervisor types**, referred to as "Type 1"(or *bare metal*
 ***VMware vs VirtualBox*** <br/>
 **VMware** offers virtualization at the hardware level. **VirtualBox** offers virtualization at both hardware and software levels. **VMware** offers ease of access to the users. **VirtualBox** does not allow ease of access as compared to **VMware**.
 
+------------------
+
 # PART 2
+First of all I created virtual machine and installed Ubuntu on it:
+![Create first VM](/screenshots/Create first VM.png)
+
+When you going to close the window with  virtual machine you will see three functions:
+Save the machine state: With this option, Oracle VM VirtualBox freezes the virtual machine by completely saving its state to your local disk.
+Send the shutdown signal. This will send an ACPI shutdown signal to the virtual machine, which has the same effect as if you had pressed the power button on a real computer. 
+Power off the machine: With this option, Oracle VM VirtualBox also stops running the virtual machine, but without saving its state.
+
+Then I cloned it and made group, that contains these two machines:
+![Cloning VM](/screenshots/Cloning VM.png)
+![Group with VMs](/screenshots/Group with VMs.png)
+To create group in command line you can use:
+VBoxManage modifyvm "vm01" --groups "/TestGroup"
+To detach vm from the group you can use:
+VBoxManage modifyvm "vm01" --groups ""
