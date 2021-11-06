@@ -44,9 +44,9 @@ Then I changed VM1_Yuhov and add some snapshots:
 Oracle VM VirtualBox can import and export virtual machines in the OVF format. OVF is a cross-platform standard supported by many virtualization products which enables the creation of ready-made virtual machines that can then be imported into a hypervisor. I exported VM1 and imported Vm from .ova file:
 ![Export process](screenshots/Export%20process.png)<br/>
 ![Import process](screenshots/Import%20process.png)<br/>
-In order to connect a USB flash drive to the Virtual Machine, you first need to download and connect Extension Pack. After that choose VM and in the setting/USB add the USB:
+In order to connect a USB flash drive to the Virtual Machine, you first need to download and connect Extension Pack. After that choose VM and in the setting/USB add the USB:<br/>
 ![Connect USB to VM](screenshots/Connect%20USB%20to%20VM.png)<br/>
-In order to make the folder shared, you need to select the Virtual Machine and setting/shared folders. Choose the folder. If you choose read only, then it will be impossible to change the folder on the host from the virtual machine. If you do not choose Read only the folder, you can change it.:
+In order to make the folder shared, you need to select the Virtual Machine and setting/shared folders. Choose the folder. If you choose read only, then it will be impossible to change the folder on the host from the virtual machine. If you do not choose Read only the folder, you can change it:<br/>
 ![Shared directory](screenshots/Shared%20directory.png)<br/>
-In order to add virtual machines to one network I: Selected VM, settings, network, adapter, network bridge. To check connection I used ping:
+In order to add virtual machines to one network I: Selected VM, settings, network, adapter, network bridge. To check connection I used ping:<br/>
 ![Check  connection](screenshots/Check%20connection.png)<br/>
