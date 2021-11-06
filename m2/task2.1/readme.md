@@ -10,5 +10,5 @@ The most popular hypervisors for infrastructure virtualization:<br />
 
 There are **two main hypervisor types**, referred to as "Type 1"(or *bare metal*) and "Type 2"(or *hosted*). A **type 1 hypervisor** acts like a lightweight operating system and runs directly on the host's hardware, while a **type 2 hypervisor** runs as a software layer on an operating system, like other computer programs.
 
-***Hyper-V vs VirtualBox***
+***Hyper-V vs VirtualBox***<br/>
 **Hyper-V** is a type 1 hypervisor while **VirtualBox** is a type 2 hypervisor. **Hyper-V** can only be installed on Windows-based systems, while **VirtualBox** is a multiplatform product.
