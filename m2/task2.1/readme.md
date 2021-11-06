@@ -1,10 +1,10 @@
 The most popular hypervisors for infrastructure virtualization:<br />
-1.Microsoft Hyper-V
-2.Oracle VirtualBox
-3.VMware
-4.Citrix XenServer
-5.Parallels Hypervisor
-6.Red Hat Enterprise Virtualization
+1. Microsoft Hyper-V
+2. Oracle VirtualBox
+3. VMware
+4. Citrix XenServer
+5. Parallels Hypervisor
+6. Red Hat Enterprise Virtualization
 
 --------------
 
