@@ -1,3 +1,5 @@
+# PART 1
+
 The most popular hypervisors for infrastructure virtualization:<br />
 1. Microsoft Hyper-V
 2. Oracle VirtualBox
@@ -18,3 +20,5 @@ There are **two main hypervisor types**, referred to as "Type 1"(or *bare metal*
 
 ***VMware vs VirtualBox*** <br/>
 **VMware** offers virtualization at the hardware level. **VirtualBox** offers virtualization at both hardware and software levels. **VMware** offers ease of access to the users. **VirtualBox** does not allow ease of access as compared to **VMware**.
+
+# PART 2
