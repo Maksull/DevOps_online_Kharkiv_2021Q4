@@ -8,4 +8,4 @@ The most popular hypervisors for infrastructure virtualization:<br />
 
 --------------
 
-There are two main hypervisor types, referred to as "Type 1"(or *bare metal*) and "Type 2"(or *hosted*). A type 1 hypervisor acts like a lightweight operating system and runs directly on the host's hardware, while a type 2 hypervisor runs as a software layer on an operating system, like other computer programs.
+There are **two main hypervisor types**, referred to as "Type 1"(or *bare metal*) and "Type 2"(or *hosted*). A **type 1 hypervisor** acts like a lightweight operating system and runs directly on the host's hardware, while a **type 2 hypervisor** runs as a software layer on an operating system, like other computer programs.
