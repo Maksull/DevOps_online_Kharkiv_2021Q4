@@ -38,7 +38,7 @@ Then I cloned it and made group, that contains these two machines:<br/>
 To create group in command line you can use:<br/>
 VBoxManage modifyvm "vm01" --groups "/TestGroup"<br/>
 To detach vm from the group you can use:<br/>
-VBoxManage modifyvm "vm01" --groups ""
+VBoxManage modifyvm "vm01" --groups ""<br/>
 Then I changed VM1_Yuhov and add some snapshots:
 ![Branched tree of snapshots](screenshots/Tree%20of%20snapshots.png)<br/>
 After that I exported VM1 and imported Vm from .ova file:
