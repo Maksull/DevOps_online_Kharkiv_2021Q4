@@ -49,4 +49,4 @@ In order to connect a USB flash drive to the Virtual Machine, you first need to 
 In order to make the folder shared, you need to select the Virtual Machine and setting/shared folders. Choose the folder. If you choose read only, then it will be impossible to change the folder on the host from the virtual machine. If you do not choose Read only the folder, you can change it:<br/>
 ![Shared directory](screenshots/Shared%20directory.png)<br/>
 In order to add virtual machines to one network I: Selected VM, settings, network, adapter, network bridge. To check connection I used ping:<br/>
-![Check  connection](screenshots/Check%20connection.png)<br/>
+![Check connection](screenshots/Check%20connection.png)<br/>
