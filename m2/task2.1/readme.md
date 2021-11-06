@@ -25,7 +25,7 @@ There are **two main hypervisor types**, referred to as "Type 1"(or *bare metal*
 
 # PART 2
 First of all I created virtual machine and installed Ubuntu on it:<br/>
-![Create first VM](/screenshots/Create%20first%20VM.png)
+![Create first VM](screenshots/Create%20first%20VM.png)
 
 When you going to close the window with  virtual machine you will see three functions:
 Save the machine state: With this option, Oracle VM VirtualBox freezes the virtual machine by completely saving its state to your local disk.
@@ -33,8 +33,8 @@ Send the shutdown signal. This will send an ACPI shutdown signal to the virtual 
 Power off the machine: With this option, Oracle VM VirtualBox also stops running the virtual machine, but without saving its state.
 
 Then I cloned it and made group, that contains these two machines:<br/>
-![Cloning VM](/screenshots/Cloning%20VM.png)<br/>
-![Group with VMs](/screenshots/Group%20with%20VMs.png)<br/>
+![Cloning VM](screenshots/Cloning%20VM.png)<br/>
+![Group with VMs](screenshots/Group%20with%20VMs.png)<br/>
 To create group in command line you can use:
 VBoxManage modifyvm "vm01" --groups "/TestGroup"
 To detach vm from the group you can use:
