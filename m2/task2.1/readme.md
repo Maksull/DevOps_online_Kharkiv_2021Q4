@@ -43,4 +43,4 @@ Then I changed VM1_Yuhov and add some snapshots:
 ![Branched tree of snapshots](screenshots/Tree%20of%20snapshots.png)<br/>
 After that I exported VM1 and imported Vm from .ova file:
 ![Export process](screenshots/Export%20process.png)<br/>
-![Import process](screenshots/Emport%20process.png)<br/>
+![Import process](screenshots/Import%20process.png)<br/>
