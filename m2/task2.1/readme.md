@@ -41,6 +41,6 @@ To detach vm from the group you can use:<br/>
 VBoxManage modifyvm "vm01" --groups ""<br/>
 Then I changed VM1_Yuhov and add some snapshots:
 ![Branched tree of snapshots](screenshots/Tree%20of%20snapshots.png)<br/>
-After that I exported VM1 and imported Vm from .ova file:
+Oracle VM VirtualBox can import and export virtual machines in the OVF format. OVF is a cross-platform standard supported by many virtualization products which enables the creation of ready-made virtual machines that can then be imported into a hypervisor. I exported VM1 and imported Vm from .ova file:
 ![Export process](screenshots/Export%20process.png)<br/>
 ![Import process](screenshots/Import%20process.png)<br/>
