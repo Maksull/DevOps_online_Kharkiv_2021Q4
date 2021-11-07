@@ -137,3 +137,7 @@ Stop and delete the created VM:<br/>
 ![vagrant halt destory](screenshots/vagrant%20halt%20destroy.png)<br/>
 
 ###Create Vagrant box
+![](screenshots/create%20vagrant%20box%201.png)<br/>
+![](screenshots/create%20vagrant%20box%202.png)<br/>
+![](screenshots/create%20vagrant%20box%203.png)<br/>
+![](screenshots/create%20vagrant%20box%204.png)<br/>
