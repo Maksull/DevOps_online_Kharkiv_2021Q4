@@ -24,24 +24,28 @@ There are **two main hypervisor types**, referred to as "Type 1"(or *bare metal*
 ------------------
 
 # PART 2
-First of all I created virtual machine and installed Ubuntu on it:<br/>
+First of all I created virtual machine and **installed Ubuntu** on it:<br/>
 ![Create first VM](screenshots/Create%20first%20VM.png)
 
 When you going to close the window with  virtual machine you will see three functions:
-1. Save the machine state: With this option, Oracle VM VirtualBox freezes the virtual machine by completely saving its state to your local disk.
-2. Send the shutdown signal. This will send an ACPI shutdown signal to the virtual machine, which has the same effect as if you had pressed the power button on a real computer. 
-3. Power off the machine: With this option, Oracle VM VirtualBox also stops running the virtual machine, but without saving its state.
+1. ***Save the machine state***: With this option, Oracle VM VirtualBox freezes the virtual machine by completely saving its state to your local disk.
+2. ***Send the shutdown signal***: This will send an ACPI shutdown signal to the virtual machine, which has the same effect as if you had pressed the power button on a real computer. 
+3. ***Power off the machine***: With this option, Oracle VM VirtualBox also stops running the virtual machine, but without saving its state.
 
-Then I cloned it and made group, that contains these two machines:<br/>
+Then I cloned it and **made group**, that contains these two machines:<br/>
 ![Cloning VM](screenshots/Cloning%20VM.png)<br/>
 ![Group with VMs](screenshots/Group%20with%20VMs.png)<br/>
 To create group in command line you can use:<br/>
+```
 VBoxManage modifyvm "vm01" --groups "/TestGroup"<br/>
+```
 To detach vm from the group you can use:<br/>
+```
 VBoxManage modifyvm "vm01" --groups ""<br/>
-Then I changed VM1_Yuhov and add some snapshots:
+```
+Then I changed VM1_Yuhov and **add some snapshots**:
 ![Branched tree of snapshots](screenshots/Tree%20of%20snapshots.png)<br/>
-Oracle VM VirtualBox can import and export virtual machines in the OVF format. OVF is a cross-platform standard supported by many virtualization products which enables the creation of ready-made virtual machines that can then be imported into a hypervisor. I exported VM1 and imported Vm from .ova file:
+Oracle VM VirtualBox can *import and export* virtual machines in the *OVF format*. *OVF* is a cross-platform standard supported by many virtualization products which enables the creation of ready-made virtual machines that can then be imported into a hypervisor. I **exported VM1 and imported Vm** from .ova file:
 ![Export process](screenshots/Export%20process.png)<br/>
 ![Import process](screenshots/Import%20process.png)<br/>
 In order to connect a USB flash drive to the Virtual Machine, you first need to download and connect Extension Pack. After that choose VM and in the setting/USB add the USB:<br/>
