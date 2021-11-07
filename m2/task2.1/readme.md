@@ -92,3 +92,22 @@ separate - Starts a VM with a detachable UI.
 vboxmanage startvm ubuntu_test
 ```
 ![vboxmanage startvm](screenshots/vboxmanage%20startvm.png)<br/>
+The VBoxManage clonevm command creates a clone of an existing virtual machine (VM). You must specify the name or the universal unique identifier (UUID) of the VM you want to clone.
+-name=name Specifies a new name for the new VM. 
+--register Automatically registers the new clone in this Oracle VM VirtualBox installation.
+```
+vboxmanage clonevm VM1_YUhov --name="VM1_Yuhov_clone" --register
+```
+![vboxmanage clonevm](screenshots/vboxmanage%20clonevm.png)<br/>
+The VBoxManage *snapshot* command manages snapshots.
+*VBoxManage snapshot <uuid|vmname> take <snapshot-name>* - takes a snapshot of the current state of the VM.
+*VBoxManage snapshot <uuid|vmname> delete <snapshot-name>* - removes the specified snapshot.
+*VBoxManage snapshot <uuid|vmname>* list - lists all the snapshots for a VM<br/>
+![vboxmanage snapshot list](screenshots/vboxmanage%20snapshot%20list.png)<br/>
+![vboxmanage take snap](screenshots/vboxmanage%20take%20snap.png)<br/>
+![vboxmanage delete snap](screenshots/vboxmanage%20delete%20snap.png)<br/>
+The **controlvm** subcommand enables you to change the state of a virtual machine that is currently running.
+VBoxManage controlvm <vm> pause: Temporarily puts a virtual machine on hold, without permanently changing its state. 
+VBoxManage controlvm <vm> savestate: Saves the current state of the VM to disk and then stops the VM.
+![vboxmanage controlvm pause](screenshots/vboxmanage%20controlvm%20pause.png)<br/>
+![vboxmanage controlvm savestate](screenshots/vboxmanage%20controlvm%20savestate.png)<br/>
