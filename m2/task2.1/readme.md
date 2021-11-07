@@ -54,3 +54,41 @@ In order to **make the folder shared**, you need to select the Virtual Machine a
 ![Shared directory](screenshots/Shared%20directory.png)<br/>
 In order to add virtual machines to one network I: *Selected VM, settings, network, adapter, network bridge*. I used *ping* to check connection :<br/>
 ![Check connection](screenshots/Check%20%20connection.png)<br/>
+The list command gives relevant information about your system and information about Oracle VM VirtualBox's current settings.
+vms: Lists all virtual machines currently registered with Oracle VM VirtualBox. 
+runningvms: Lists all currently running virtual machines by their unique identifiers (UUIDs) in the same format as with vms.
+```
+vboxmanage list vms
+vboxmanage list running vms
+```
+![vboxmanage list vms list runningvms](screenshots/vboxmanage%20list%20vms%20list%20runningvms.png)<br/>
+The showvminfo command shows information about a particular virtual machine.
+```
+vboxmanage showvminfo VM1_Yuhov
+```
+![vboxmanage showvminfo](screenshots/vboxmanage%20showvminfo.png)<br/>
+The VBoxManage createvm command creates a new XML virtual machine definition file. You must specify the name of the VM by using --name name. The --ostype ostype option specifies the guest OS to run in the VM. The --register option registers the VM with your Oracle VM VirtualBox installation.
+```
+vboxmanage createvm --name ubuntu_test --ostype Ubuntu_64 --register
+```
+![vboxmanage createvm](screenshots/vboxmanage%20createvm.png)<br/>
+You can change general settings through VBoxManage modifyvm. 
+--cpus <cpucount>: Sets the number of virtual CPUs for the virtual machine
+--memory <memorysize>: Sets the amount of RAM, in MB, that the virtual machine should allocate for itself from the host. 
+--audio none|null|dsound|oss|alsa|pulse|coreaudio: Specifies whether the VM should have audio support, and if so, which type.
+--usb on|off: Enables and disables the VM's virtual USB controller.
+--acpi on|off and --ioapic on|off: Determines whether the VM has ACPI and I/O APIC support.
+--boot<1-4> none|floppy|dvd|disk|net: Specifies the boot order for the virtual machine. 
+--nic<1-N> none|null|nat|natnetwork|bridged|intnet|hostonly|generic: Configures the type of networking for each of the VM's virtual network cards. 
+```
+vboxmanage modifyvm ubuntu_test --cpus 1 --memory 512 --audio none  --usb off --acpi on --boot1 dvd --nic1 nat
+```
+![vboxmanage modifyvm](screenshots/vboxmanage%20modifyvm.png)<br/>
+The startvm command starts a virtual machine that is currently in the Powered Off or Saved states. The optional --type specifier determines whether the machine will be started in a window or whether the output should go through VBoxHeadless
+gui - Starts a VM showing a GUI window. This is the default.
+headless - Starts a VM without a window for remote display only.
+separate - Starts a VM with a detachable UI.
+```
+vboxmanage startvm ubuntu_test
+```
+![vboxmanage startvm](screenshots/vboxmanage%20startvm.png)<br/>
