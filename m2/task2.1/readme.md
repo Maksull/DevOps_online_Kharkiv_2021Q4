@@ -123,3 +123,7 @@ vboxmanage controlvm VM1_Yuhov savestate
 ```
 ![vboxmanage controlvm pause](screenshots/vboxmanage%20controlvm%20pause.png)<br/>
 ![vboxmanage controlvm savestate](screenshots/vboxmanage%20controlvm%20savestate.png)<br/>
+
+------------------
+
+# PART 3
