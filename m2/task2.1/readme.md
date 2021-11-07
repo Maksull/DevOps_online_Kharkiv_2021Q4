@@ -54,20 +54,22 @@ In order to **make the folder shared**, you need to select the Virtual Machine a
 ![Shared directory](screenshots/Shared%20directory.png)<br/>
 In order to add virtual machines to one network I: *Selected VM, settings, network, adapter, network bridge*. I used *ping* to check connection :<br/>
 ![Check connection](screenshots/Check%20%20connection.png)<br/>
-The list command gives relevant information about your system and information about Oracle VM VirtualBox's current settings.
-vms: Lists all virtual machines currently registered with Oracle VM VirtualBox. 
+The ***list*** command gives relevant information about your system and information about Oracle VM VirtualBox's current settings.<br/>
+vms: Lists all virtual machines currently registered with Oracle VM VirtualBox. <br/>
 runningvms: Lists all currently running virtual machines by their unique identifiers (UUIDs) in the same format as with vms.
 ```
 vboxmanage list vms
 vboxmanage list running vms
 ```
 ![vboxmanage list vms list runningvms](screenshots/vboxmanage%20list%20vms%20list%20runningvms.png)<br/>
-The showvminfo command shows information about a particular virtual machine.
+The ***showvminfo*** command shows information about a particular virtual machine.
 ```
 vboxmanage showvminfo VM1_Yuhov
 ```
 ![vboxmanage showvminfo](screenshots/vboxmanage%20showvminfo.png)<br/>
-The VBoxManage createvm command creates a new XML virtual machine definition file. You must specify the name of the VM by using --name name. The --ostype ostype option specifies the guest OS to run in the VM. The --register option registers the VM with your Oracle VM VirtualBox installation.
+The VBoxManage ***createvm*** command creates a new XML virtual machine definition file. You must specify the name of the VM by using --name name. 
+The --ostype ostype option specifies the guest OS to run in the VM. 
+The --register option registers the VM with your Oracle VM VirtualBox installation.
 ```
 vboxmanage createvm --name ubuntu_test --ostype Ubuntu_64 --register
 ```
@@ -103,10 +105,16 @@ The VBoxManage ***snapshot*** command manages snapshots.
 *VBoxManage snapshot <uuid|vmname> take <snapshot-name>* - takes a snapshot of the current state of the VM.
 *VBoxManage snapshot <uuid|vmname> delete <snapshot-name>* - removes the specified snapshot.
 *VBoxManage snapshot <uuid|vmname>* list - lists all the snapshots for a VM<br/>
+```
+  vboxmanage snapshot VM1_Yuhov list
+  vboxmanage snapshot VM1_Yuhov take first_snap
+  vboxmanage snapshot VM1_Yuhov take second_snap
+  vboxmanage snapshot VM1_Yuhov delete second_snap
+```
 ![vboxmanage snapshot list](screenshots/vboxmanage%20snapshot%20list.png)<br/>
 ![vboxmanage take snap](screenshots/vboxmanage%20take%20snap.png)<br/>
 ![vboxmanage delete snap](screenshots/vboxmanage%20delete%20snap.png)<br/>
-The **controlvm** subcommand enables you to change the state of a virtual machine that is currently running.
+The ***controlvm*** subcommand enables you to change the state of a virtual machine that is currently running.
 *VBoxManage controlvm <vm> pause*: Temporarily puts a virtual machine on hold, without permanently changing its state. 
 *VBoxManage controlvm <vm> savestate*: Saves the current state of the VM to disk and then stops the VM.
 ![vboxmanage controlvm pause](screenshots/vboxmanage%20controlvm%20pause.png)<br/>
