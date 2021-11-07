@@ -117,5 +117,9 @@ The VBoxManage ***snapshot*** command manages snapshots.<br/>
 The ***controlvm*** subcommand enables you to change the state of a virtual machine that is currently running.<br/>
 *VBoxManage controlvm <vm> pause*: Temporarily puts a virtual machine on hold, without permanently changing its state. <br/>
 *VBoxManage controlvm <vm> savestate*: Saves the current state of the VM to disk and then stops the VM.
+```
+vboxmanage controlvm VM1_Yuhov pause
+vboxmanage controlvm VM1_Yuhov savestate
+```
 ![vboxmanage controlvm pause](screenshots/vboxmanage%20controlvm%20pause.png)<br/>
 ![vboxmanage controlvm savestate](screenshots/vboxmanage%20controlvm%20savestate.png)<br/>
