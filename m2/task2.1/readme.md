@@ -135,3 +135,5 @@ Connet to the VM using PuTTY:<br/>
 ![vagrant PuTTY](screenshots/vagrant%20putty.png)<br/>
 Stop and delete the created VM:<br/>
 ![vagrant halt destory](screenshots/vagrant%20halt%20destroy.png)<br/>
+
+###Create Vagrant box
