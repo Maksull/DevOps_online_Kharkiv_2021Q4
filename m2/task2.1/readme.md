@@ -73,33 +73,33 @@ vboxmanage createvm --name ubuntu_test --ostype Ubuntu_64 --register
 ```
 ![vboxmanage createvm](screenshots/vboxmanage%20createvm.png)<br/>
 You can change general settings through VBoxManage modifyvm. 
---cpus <cpucount>: Sets the number of virtual CPUs for the virtual machine
---memory <memorysize>: Sets the amount of RAM, in MB, that the virtual machine should allocate for itself from the host. 
---audio none|null|dsound|oss|alsa|pulse|coreaudio: Specifies whether the VM should have audio support, and if so, which type.
---usb on|off: Enables and disables the VM's virtual USB controller.
---acpi on|off and --ioapic on|off: Determines whether the VM has ACPI and I/O APIC support.
---boot<1-4> none|floppy|dvd|disk|net: Specifies the boot order for the virtual machine. 
---nic<1-N> none|null|nat|natnetwork|bridged|intnet|hostonly|generic: Configures the type of networking for each of the VM's virtual network cards. 
+*--cpus <cpucount>*: Sets the number of virtual CPUs for the virtual machine
+*--memory <memorysize>*: Sets the amount of RAM, in MB, that the virtual machine should allocate for itself from the host. 
+*--audio none|null|dsound|oss|alsa|pulse|coreaudio*: Specifies whether the VM should have audio support, and if so, which type.
+*--usb on|off*: Enables and disables the VM's virtual USB controller.
+*--acpi on|off and --ioapic on|off: Determines whether the VM has ACPI and I/O APIC support.
+*--boot<1-4> none|floppy|dvd|disk|net*: Specifies the boot order for the virtual machine. 
+*--nic<1-N> none|null|nat|natnetwork|bridged|intnet|hostonly|generic*: Configures the type of networking for each of the VM's virtual network cards. 
 ```
 vboxmanage modifyvm ubuntu_test --cpus 1 --memory 512 --audio none  --usb off --acpi on --boot1 dvd --nic1 nat
 ```
 ![vboxmanage modifyvm](screenshots/vboxmanage%20modifyvm.png)<br/>
-The startvm command starts a virtual machine that is currently in the Powered Off or Saved states. The optional --type specifier determines whether the machine will be started in a window or whether the output should go through VBoxHeadless
-gui - Starts a VM showing a GUI window. This is the default.
-headless - Starts a VM without a window for remote display only.
-separate - Starts a VM with a detachable UI.
+The ***startvm*** command starts a virtual machine that is currently in the Powered Off or Saved states. The optional --type specifier determines whether the machine will be started in a window or whether the output should go through VBoxHeadless
+*gui* - Starts a VM showing a GUI window. This is the default.
+*headless* - Starts a VM without a window for remote display only.
+*separate* - Starts a VM with a detachable UI.
 ```
 vboxmanage startvm ubuntu_test
 ```
 ![vboxmanage startvm](screenshots/vboxmanage%20startvm.png)<br/>
-The VBoxManage clonevm command creates a clone of an existing virtual machine (VM). You must specify the name or the universal unique identifier (UUID) of the VM you want to clone.
--name=name Specifies a new name for the new VM. 
---register Automatically registers the new clone in this Oracle VM VirtualBox installation.
+The VBoxManage ***clonevm*** command creates a clone of an existing virtual machine (VM). You must specify the name or the universal unique identifier (UUID) of the VM you want to clone.
+*-name=name* - Specifies a new name for the new VM. 
+*--register* -  Automatically registers the new clone in this Oracle VM VirtualBox installation.
 ```
 vboxmanage clonevm VM1_YUhov --name="VM1_Yuhov_clone" --register
 ```
 ![vboxmanage clonevm](screenshots/vboxmanage%20clonevm.png)<br/>
-The VBoxManage *snapshot* command manages snapshots.
+The VBoxManage ***snapshot*** command manages snapshots.
 *VBoxManage snapshot <uuid|vmname> take <snapshot-name>* - takes a snapshot of the current state of the VM.
 *VBoxManage snapshot <uuid|vmname> delete <snapshot-name>* - removes the specified snapshot.
 *VBoxManage snapshot <uuid|vmname>* list - lists all the snapshots for a VM<br/>
@@ -107,7 +107,7 @@ The VBoxManage *snapshot* command manages snapshots.
 ![vboxmanage take snap](screenshots/vboxmanage%20take%20snap.png)<br/>
 ![vboxmanage delete snap](screenshots/vboxmanage%20delete%20snap.png)<br/>
 The **controlvm** subcommand enables you to change the state of a virtual machine that is currently running.
-VBoxManage controlvm <vm> pause: Temporarily puts a virtual machine on hold, without permanently changing its state. 
-VBoxManage controlvm <vm> savestate: Saves the current state of the VM to disk and then stops the VM.
+*VBoxManage controlvm <vm> pause*: Temporarily puts a virtual machine on hold, without permanently changing its state. 
+*VBoxManage controlvm <vm> savestate*: Saves the current state of the VM to disk and then stops the VM.
 ![vboxmanage controlvm pause](screenshots/vboxmanage%20controlvm%20pause.png)<br/>
 ![vboxmanage controlvm savestate](screenshots/vboxmanage%20controlvm%20savestate.png)<br/>
