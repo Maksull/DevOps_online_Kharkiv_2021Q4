@@ -127,3 +127,11 @@ vboxmanage controlvm VM1_Yuhov savestate
 ------------------
 
 # PART 3
+*Initialize the environment* with the default Vagrant box:
+![vagrant init](screenshots/vagrant%20init.png)<br/>
+Run *vagrant up*:
+![vagrant up](screenshots/vagrant%20up.png)<br/>
+Connet to the VM using PuTTY:
+![vagrant PuTTY](screenshots/vagrant%20putty.png)<br/>
+Stop and delete the created VM:
+![vagrant halt destory](screenshots/vagrant%20halt%20destroy.png)<br/>
