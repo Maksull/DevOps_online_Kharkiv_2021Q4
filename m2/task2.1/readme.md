@@ -144,4 +144,4 @@ vagrant package [name|id]
 
 ***--output NAME*** - The resulting package will be saved as NAME. By default, it will be saved as package.box.
   
-![](screenshots/create%20vagrant%20box%201.png)<br/>
+![](screenshots/create%20vagrant%20box.png)<br/>
