@@ -137,7 +137,13 @@ Stop and delete the created VM:<br/>
 ![vagrant halt destory](screenshots/vagrant%20halt%20destroy.png)<br/>
 
 ### Create Vagrant box
+```
+vagrant package [name|id]
+```
+***--base NAME*** - this will package a VirtualBox machine that VirtualBox manages. NAME should be the name or UUID of the machine from the VirtualBox GUI. Currently this option is only available for VirtualBox.
 
+***--output NAME*** - The resulting package will be saved as NAME. By default, it will be saved as package.box.
+  
 ![](screenshots/create%20vagrant%20box%201.png)<br/>
 ![](screenshots/create%20vagrant%20box%202.png)<br/>
 ![](screenshots/create%20vagrant%20box%203.png)<br/>
