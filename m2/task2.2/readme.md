@@ -20,4 +20,6 @@ Create **instance** from ***AMI***:
 ![Instance from snapshot](screenshots/detach_disk.png)  
 ***Attach*** disk to the seccond disk:  
 ![Instance from snapshot](screenshots/attach_disk_to_instance2.png)  
-
+Launch and configure a WordPress instancewith Amazon Lightsail:  
+![wordpress_lightsail](screenshots/wordpress_lightsail.png)  
+![Site](screenshots/wordpress_lightsail2.png)  
