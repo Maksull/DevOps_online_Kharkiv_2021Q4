@@ -44,6 +44,9 @@ Create ***hosted zone*** in **Route 53**:
 ![Create hosted zone](screenshots/create_hosted_zone.png)  
 Create ***record with alias***:  
 ![Create record with alias](screenshots/create_record_alias.png)  
-
+Total **Route 53** records in my domain:  
+![Route 53 records](screenshots/route53_records.png)  
+Result:  
+![My site](screenshots/my_site.png)  
 
 
