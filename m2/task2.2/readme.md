@@ -27,7 +27,7 @@ Create a ***bucket***:
 ![Create bucket](screenshots/create_bucket.png)  
 Create a ***user***:  
 ![Create user](screenshots/users.png)  
-Aws CLI ***config and upload***:  
+AWS CLI ***config and upload***:  
 ![AWS CLI configure and upload](screenshots/aws_configure_upload.png)  
   
   
