@@ -60,9 +60,9 @@ docker pull tomcat
 ```
 ![Docker pull](screenshots/docker_pull.png)  
 In order to **run Docker image** you need *docker run [OPTION] [IMAGE]*:  
--t : Allocate a pseudo-tty;  
--i : Keep STDIN open even if not attached;  
--p : Publish all exposed ports to the host interfaces  
+*-t* : Allocate a pseudo-tty;  
+*-i* : Keep STDIN open even if not attached;  
+*-p* : Publish all exposed ports to the host interfaces  
 ```
 docker run -it -p 1234:8080 tomcat
 ```
