@@ -90,12 +90,47 @@ docker rmi [OPTIONS] [IMAGE]
 ```
 ![Docker rmi](screenshots/docker_rmi.png)  
 
+------------
+# Amazon ECS
+  
+  
+  
+Create ***repository***:
+![Create repository](screenshots/create_repository.png)  
+AWS login:  
+![AWS login](screenshots/aws_login.png)  
+Rename a docker *image* to make it possible to *push* to the **ECS repository**:  
+```
+docker tag [old_name] [aws_account_id.dkr.ecr.region.amazonaws.com/repository_name:version]
+docker push aws_account_id.dkr.ecr.region.amazonaws.com/repository_name:version
+```
+![Docker tag and Docker push](screenshots/aws_login.png)  
+**Repository state** after several *pushes*:  
+![Repository state](screenshots/repository.png)  
+Create ***lifecycle*** in order to delete old images:  
+![Create_lifecycle](screenshots/create_lifecycle.png)  
+Pull **Docker image** from repository:  
+```
+docker pull aws_account_id.dkr.ecr.region.amazonaws.com/repository_name:version
+```
+![Pull Docker image](screenshots/docker_pull_repository.png)  
+Create ***ECS Cluster***:  
+![Create_cluster](screenshots/create_cluster.png)  
+Create ***task definition***:  
+![Create_task definition](screenshots/create_task_definition.png)  
+Add **container** to the **task definition**:  
+![Add container](screenshots/task_definition_add_container.png)  
+Add my own **container** to the another **task definition**:   
+![Add my own container](screenshots/add_own_container.png)  
+Result:  
+![Result](screenshots/result.png)  
+
 
 ------------
 # Route 53
-
-
-
+  
+  
+  
 Create ***buckets*** with the ***domain*** name:  
 ![Create buckets with the domain name](screenshots/create_buckets_with_domain_name.png)  
 Change ***bucket policy***:  
