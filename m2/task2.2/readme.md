@@ -29,9 +29,48 @@ Create a ***user***:
 ![Create user](screenshots/users.png)  
 AWS CLI ***config and upload***:  
 ![AWS CLI configure and upload](screenshots/aws_configure_upload.png)  
+------------
+In order to install Docker on Linux you need:  
+```
+sudo apt update
+sudo apt install docker-ce
+```
+Check Docker status:  
+```
+sudo systemctl status docker
+```
+![Docker status](screenshots/docker_status.png)  
+Check Docker info:  
+```
+docker info
+```
+![Docker info](screenshots/docker_info.png)  
+Check total ***Docker images*** on the device:
+```
+docker images
+```
+![Docker images](screenshots/docker_images.png)  
+In order to download image from ***Docker hub*** you need:  
+```
+docker pull tomcat
+```
+![Docker pull](screenshots/docker_pull.png)  
+In order to **run Docker image** you need:
+```
+docker run -it -p 1234:8080 tomcat
+```
+![Docker run](screenshots/docker_run.png)  
+Create my own ***Dockerfile***:  
+![Dockerfile](screenshots/dockerfile.png)  
+In order to create **image** from **Dockerfile** you need:  
+```
+docker build -t maksym:v1 .
+```
+![Docker build](screenshots/docker_build.png)  
+
+
   
-  
-  
+----------
 Create ***buckets*** with the ***domain*** name:  
 ![Create buckets with the domain name](screenshots/create_buckets_with_domain_name.png)  
 Change ***bucket policy***:  
