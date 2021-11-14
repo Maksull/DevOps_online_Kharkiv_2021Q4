@@ -46,12 +46,12 @@ sudo systemctl status docker
 ![Docker status](screenshots/docker_status.png)  
 Check Docker info:  
 ```
-docker info
+docker info [OPTIONS]
 ```
 ![Docker info](screenshots/docker_info.png)  
-Check total ***Docker images*** on the device:
+Check list of ***Docker images*** on the device:
 ```
-docker images
+docker images [OPTIONS] [REPOSITORY[:TAG]]
 ```
 ![Docker images](screenshots/docker_images.png)  
 In order to download image from ***Docker hub*** you need:  
