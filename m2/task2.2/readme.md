@@ -29,11 +29,13 @@ Create a ***user***:
 ![Create user](screenshots/users.png)  
 AWS CLI ***config and upload***:  
 ![AWS CLI configure and upload](screenshots/aws_configure_upload.png)  
-
+  
+  
 ------------
 # DOCKER
-
-
+  
+  
+  
 In order to install Docker on Linux you need:  
 ```
 sudo apt update
@@ -89,7 +91,8 @@ If you want to *remove* the **Docker image** from the device, you need to use:
 docker rmi [OPTIONS] [IMAGE]
 ```
 ![Docker rmi](screenshots/docker_rmi.png)  
-
+  
+  
 ------------
 # Amazon ECS
   
@@ -124,8 +127,8 @@ Add my own **container** to the another **task definition**:
 ![Add my own container](screenshots/add_own_container.png)  
 Result:  
 ![Result](screenshots/result.png)  
-
-
+  
+  
 ------------
 # Route 53
   
