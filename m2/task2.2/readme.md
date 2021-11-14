@@ -149,7 +149,7 @@ Create ***record with alias***:
 Total **Route 53** records in my domain:  
 ![Route 53 records](screenshots/route53_records.png)  
 Result:  
-yuhovdevops.pp.ua
+[Site](http://yuhovdevops.pp.ua)
 ![My site](screenshots/my_site.png)  
 
 
