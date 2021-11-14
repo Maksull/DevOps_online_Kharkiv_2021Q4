@@ -74,7 +74,7 @@ In order to create **image** from **Dockerfile** you need (-t name and optionall
 docker build -t maksym:v1 .
 ```
 ![Docker build](screenshots/docker_build.png)  
-To display ***Docker process*** you need( -a option will show all the containers both stopped and running):  
+To display ***Docker process*** you need (-a option will show all the containers both stopped and running):  
 ```
 docker ps -a
 ```
