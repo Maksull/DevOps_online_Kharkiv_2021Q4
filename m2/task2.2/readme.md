@@ -29,9 +29,12 @@ Create a ***user***:
 ![Create user](screenshots/users.png)  
 AWS CLI ***config and upload***:  
 ![AWS CLI configure and upload](screenshots/aws_configure_upload.png)  
-------------
 
+
+------------
 # DOCKER
+
+
 
 In order to install Docker on Linux you need:  
 ```
@@ -70,10 +73,26 @@ In order to create **image** from **Dockerfile** you need:
 docker build -t maksym:v1 .
 ```
 ![Docker build](screenshots/docker_build.png)  
+To display ***Docker process*** you need( -a option will show all the containers both stopped and running):  
+```
+docker ps -a
+```
+![Docker ps](screenshots/docker_ps.png)  
+If you want to *remove* the **Docker container**, you need to use:
+```
+docker rm [OPTIONS] [CONTAINER]
+```
+![Docker rm](screenshots/docker_rm.png)  
+If you want to *remove* the **Docker image** from the device, you need to use: 
+```
+docker rmi [OPTIONS] [IMAGE]
+```
+![Docker rmi](screenshots/docker_rmi.png)  
+
 
 ------------
-
 # Route 53
+
 
 
 Create ***buckets*** with the ***domain*** name:  
