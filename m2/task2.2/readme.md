@@ -30,6 +30,9 @@ Create a ***user***:
 AWS CLI ***config and upload***:  
 ![AWS CLI configure and upload](screenshots/aws_configure_upload.png)  
 ------------
+
+# DOCKER
+
 In order to install Docker on Linux you need:  
 ```
 sudo apt update
@@ -68,9 +71,11 @@ docker build -t maksym:v1 .
 ```
 ![Docker build](screenshots/docker_build.png)  
 
+------------
 
-  
-----------
+# Route 53
+
+
 Create ***buckets*** with the ***domain*** name:  
 ![Create buckets with the domain name](screenshots/create_buckets_with_domain_name.png)  
 Change ***bucket policy***:  
