@@ -40,3 +40,10 @@ Destination *port*: 63095
 Source *MAC-address*: 14:4d:67:31:00:1c  
 Destination *MAC-address*: 6c:6a:77:8b:f1:3c  
 </details>
+  
+----------
+  
+<details><summary>TASK 3.2</summary>
+  
+  
+</details>
