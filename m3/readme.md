@@ -27,7 +27,7 @@ When you **click on a line**, the heading of the corresponding layer is highligh
 ***Physical*** layer:  
 ![Physical layer](screenshots/physical_layer.png)  
 ***Data link*** layer:  
-![Data link layer](screenshotsdata_link_layer.png)  
+![Data link layer](screenshots/data_link_layer.png)  
 ***Network*** layer:  
 ![Network layer](screenshots/network_layer.png)  
 ***Transport*** layer:  
