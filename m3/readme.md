@@ -44,6 +44,7 @@ Destination *MAC-address*: 6c:6a:77:8b:f1:3c
 ----------
   
 <details><summary>TASK 3.2</summary>
+  
 *Ping* computer *gateway*:  
 ![Ping comuters gateway](screenshots/ping_computers_gateway.png)  
 Check connection inside **Data Center**:  
@@ -61,7 +62,8 @@ Work with CLI in Route 3:
 *Check connection* after **configuring in CLI**:  
 ![After confg. in CLI](screenshots/cli_ping.png)  
 ***TASK 3.2*** Result:  
-![TASK 3.2 Result](screenshots/task3.2_result.png)  
+![TASK 3.2 Result](screenshots/task3.2_result.png) 
+  
 </details>
   
 ----------
