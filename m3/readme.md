@@ -51,7 +51,8 @@ Check connection inside **Data Center**:
 ![Ping servers](screenshots/ping_servers.png)  
 ***Tracert*** servers:  
 ![Tracert servers](screenshots/tracert_servers.png)  
-*Change mask* and then **check connection**:  
+*Change mask* and then **check connection**(unsuccess).  
+Because they are on different subnets:  
 ![Change mask, check connection](screenshots/change_mask_ping_server.png)  
 Configure ***VLAN***:  
 ![Configure VLAN](screenshots/configure_vlan.png)  
