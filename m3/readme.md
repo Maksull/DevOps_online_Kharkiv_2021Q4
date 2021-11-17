@@ -8,8 +8,8 @@ PACKET TRACER
 ![Ping Data Center](screenshots/ping_data_center.png)  
 **Ping** PC and **router** inside *"Home Office"* network:  
 ![Ping Home Office](screenshots/ping_home_office.png)  
-Task 3.1 result:  
-![Task 3.1 result](screenshots/task3.1_result.png)  
+***TASK 3.1*** Result:  
+![TASK 3.1 Result](screenshots/task3.1_result.png)  
   
 WIRESHARK  
   
@@ -44,6 +44,34 @@ Destination *MAC-address*: 6c:6a:77:8b:f1:3c
 ----------
   
 <details><summary>TASK 3.2</summary>
-  
-  
+*Ping* computer *gateway*:  
+![Ping comuters gateway](screenshots/ping_computers_gateway.png)  
+Check connection inside **Data Center**:  
+![Ping servers](screenshots/ping_servers.png)  
+***Tracert*** servers:  
+![Tracert servers](screenshots/tracert_servers.png)  
+*Change mask* and then **check connection**:  
+![Change mask, check connection](screenshots/change_mask_ping_server.png)  
+Configure ***VLAN***:  
+![Configure VLAN](screenshots/configure_vlan.png)  
+*Check connection* after **changing VLAN**:  
+![Change VLAN and ping](screenshots/change_vlan_ping_server.png)  
+Work with CLI in Route 3:  
+![Work with CLI](screenshots/route_cli.png)  
+*Check connection* after **configuring in CLI**:  
+![After confg. in CLI](screenshots/cli_ping.png)  
+***TASK 3.2*** Result:  
+![TASK 3.2 Result](screenshots/task3.2_result.png)  
 </details>
+  
+----------
+  
+
+
+
+
+
+
+
+
+
