@@ -69,7 +69,22 @@ Work with CLI in Route 3:
   
 ----------
   
-
+  
+<details><summary>TASK 3.3</summary>
+  
+Network at the beginning of the task:  
+![Network](screenshots/task3.3_begin.png)  
+***Static*** routing:  
+![Static routing](screenshots/routers_static.png)  
+**Check** connection with *static* routing:  
+![Check connection, static](screenshots/static_check_connection.png)  
+***RIP*** routing:  
+![RIP routing](screenshots/route_rip.png)  
+**Check** connection with *RIP* routing :  
+![Configure VLAN](screenshots/rip_check_connection.png)  
+  
+</details>
+ 
 
 
 
