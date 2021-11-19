@@ -88,7 +88,25 @@ Network at the beginning of the task:
   
 <details><summary>TASK 3.4</summary>
   
-    
+***DHCP server*** configurration:    
+![DHCP server](screenshots/dhcp_server.png)  
+Check connection with DHCP:  
+![Check connection with DHCP](screenshots/dhcp_check_connection.png)   
+***DNS server*** configuration:  
+![DNS server](screenshots/dns_server.png)    
+Check connection with *DNS*:  
+![Check connection with DNS](screenshots/dns_check_connection.png)  
+*Add a new server* and change index.html:  
+![Index html](screenshots/html.png)    
+Configure ***Port Forwarding*** on **Home Router**:  
+![Port Forwarding](screenshots/port_forwarding.png)    
+Add one more **domain** in the *DNS Server*:  
+![One more domain](screenshots/one_more_domain.png)    
+Created web page in PC0 browser:  
+![Web page](screenshots/web_page.png)    
+TASK3.4 Result:  
+![TASK3.4 Result](screenshots/task3.4_result.png)    
+
   
 </details>
   
