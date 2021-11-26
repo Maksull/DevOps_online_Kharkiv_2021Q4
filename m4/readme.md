@@ -102,8 +102,8 @@ DELETE FROM users WHERE age = 24;
 ![Delete Where](screenshots/delete_where.png)  
 ***DCL***:
 ----------
-*GRANT* - Grants a user or group permission to perform certain operations on an object;
-*REVOKE* - revokes the issued permission;
-*DENY* - specifies a prohibition that has priority over permission.
+*GRANT* - Grants a user or group permission to perform certain operations on an object;  
+*REVOKE* - revokes the issued permission;  
+*DENY* - specifies a prohibition that has priority over permission.  
 
 
