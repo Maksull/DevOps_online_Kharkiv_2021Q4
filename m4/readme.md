@@ -44,15 +44,15 @@ DESCRIBE users;
 ![Describe table](screenshots/describe_table.png)  
 After finding out that everything is fine, I began to ***fill in the table***:  
 ```
-INSERT INTO users VALUES ('1', 'Maksym', 'Yuhov' '17', 'kyrkyrkyr99@gmail.com', 'work');
+INSERT INTO users VALUES ('1', 'Maksym', 'Yuhov', '17', 'kyrkyrkyr99@gmail.com', 'work');
 SELECT * FROM users
 ```
 ![Fill in the table](screenshots/insert_select.png)  
 Then I added some new users and display the result:  
 ```
-INSERT INTO users VALUES (NULL, 'Oleksii', 'Oko' '23', 'oo.oko@gmail.com', 'vacation');
-INSERT INTO users VALUES (NULL, 'Kirill', 'Suskorov' '20', 'k.suskorov@gmail.com', 'work');
-INSERT INTO users VALUES (NULL, 'Dima', 'Kolo' '18', 'd.kolo@gmail.com', 'business trip');
+INSERT INTO users VALUES (NULL, 'Oleksii', 'Oko', '23', 'oo.oko@gmail.com', 'vacation');
+INSERT INTO users VALUES (NULL, 'Kirill', 'Suskorov', '20', 'k.suskorov@gmail.com', 'work');
+INSERT INTO users VALUES (NULL, 'Dima', 'Kolo', '18', 'd.kolo@gmail.com', 'business trip');
 SELECT * FROM users
 ```
 ![Some inserts](screenshots/after_some_inserts.png)  
@@ -71,6 +71,39 @@ To sort persons by age, I used ***ORDER BY***:
 SELECT * FROM users WHERE id > 0 ORDER BY age;
 ```
 ![SQL ORDER BY](screenshots/sql_order_by.png)  
-
+***DDL***:
+----------
+*Rename*:  
+```
+ALTER TABLE users RENAME TO first;
+```
+![Alter Rename](screenshots/alter_rename.png)   
+*Add* a column:  
+```
+ALTER TABLE first ADD test_column char(10);
+```
+![Alter Add](screenshots/alter_add.png)   
+*Delete* a column:  
+```
+ALTER TABLE first DROP COLUMN test_column;
+```
+![Alter Drop Column](screenshots/alter_drop_column.png)   
+***DML***:
+----------
+*Change info* in a table:  
+```
+UPDATE users SET age = 24 WHERE age = 20;
+```
+![Update Set Where](screenshots/update_set.png)  
+*Delete info* from a table:  
+```
+DELETE FROM users WHERE age = 24;
+```
+![Delete Where](screenshots/delete_where.png)  
+***DCL***:
+----------
+*GRANT* - Grants a user or group permission to perform certain operations on an object;
+*REVOKE* - revokes the issued permission;
+*DENY* - specifies a prohibition that has priority over permission.
 
 
