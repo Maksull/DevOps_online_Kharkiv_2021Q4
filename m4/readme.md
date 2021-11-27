@@ -104,6 +104,39 @@ DELETE FROM users WHERE age = 24;
 ----------
 *GRANT* - Grants a user or group permission to perform certain operations on an object;  
 *REVOKE* - revokes the issued permission;  
-*DENY* - specifies a prohibition that has priority over permission.  
+
+***Create two new users*** and then **display the list of current users**:  
+```
+CREATE USER 'second_user'@'localhost' IDENTIFIED BY '1234'
+CREATE USER 'third_user'@'localhost' IDENTIFIED BY '1234'
+```
+![Create User](screenshots/create_display_users.png)  
+***Give privileges*** to the new users:  
+```
+GRANT ALL PRIVILEGES ON users.* TO 'second_user'@'localhost';
+GRANT SELECT,UPDATE ON users.* TO 'third_user'@'localhost';
+```
+Display their ***privileges***:  
+```
+SHOW GRANTS FOR 'second_user'@'localhost';
+SHOW GRANTS FOR 'third_user'@'localhost';
+```
+![Show grants](screenshots/show_grants.png)  
+Test the privileges:  
+![Test privileges](screenshots/third_user_test.png)  
+***Revoke*** their privileges:  
+```
+REVOKE ALL PRIVILEGES ON users.* TO 'second_user'@'localhost';
+REVOKE UPDATE ON users.* TO 'third_user'@'localhost';
+```
+![Revoke privileges](screenshots/revoke_show_grants.png)  
+***Delete*** the users:  
+```
+DROP USER 'second_user'@'localhost';
+DROP USER 'third_user'@'localhost';
+```
+![Drop users](screenshots/drop_user.png)  
+
+
 
 
