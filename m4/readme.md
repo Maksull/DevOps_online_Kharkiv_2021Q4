@@ -169,7 +169,7 @@ mysqldump -u root -h localhost test > test_back.sql                             
 mysqldump -u root -h localhost —databases test mysql > test_mysql_back.sql        // Several DB  
 mysqldump -u root -h localhost —all-databases > all_db_back.sql                   // All DB
 ```
-Restore DB:  
+***Restore*** DB:  
 ```
 mysql -u root -h localhost test_back < test_back.sql      // One DB 
 mysql -u root -h localhost  < all_db_back.sql             // Several DB
@@ -182,20 +182,38 @@ Create ***a database on RDS***:
 ![RDS create a database](screenshots/rds_create_database.png)  
 After creating find ***the endpoint***:  
 ![RDS endpoint](screenshots/rds_endpoint.png)  
-To connect to RDS database, I used:  
+To ***connect to RDS*** database I used:  
 ```
 mysql -u account_name -h endpoint -p
 mysql -u admin -h database-1.cpsysojpeix1.eu-central-1.rds.amazonaws.com -p
 ```
 Databases in the RDS database:  
 ![RDS databases](screenshots/rds_show_databases.png)  
-To transfer my local database, I used:  
+To transfer my local database to RDS, I used:  
 ```
 mysql -u admin -h database-1.cpsysojpeix1.eu-central-1.rds.amazonaws.com -p test_table < test_back.sql
 ```
 ![RDS SHOW SELECT](screenshots/rds_show_select.png)  
-To make backup from the RDS database, I used:  
+To ***make backup from the RDS database***, I used:  
 ```
 mysqldump -u admin -h database-2.cpsysojpeix1.eu-central-1.rds.amazonaws.com -p test_table > test_table_back.sql
 ```                                                
 </details>
+
+<details><summary>PART 3</summary>
+  
+Create ***DynamoDB table***:  
+![DynamoDB table](screenshots/dynamodb_create_table.png)  
+DynamoDB ***items***:  
+![DynamoDB items](screenshots/dynamodb_items.png)  
+DynamoDB ***scan***:  
+![DynamoDB scan](screenshots/dynamodb_scan.png)  
+DynamoDB ***query***:  
+![DynamoDB query](screenshots/dynamodb_query.png)  
+  
+</details>
+
+
+
+
+
