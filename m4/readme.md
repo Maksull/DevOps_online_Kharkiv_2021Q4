@@ -1,3 +1,5 @@
+<details><summary>TASK 3.1</summary>
+  
 After installing ***mysql*** on the station I *need to login*, I used:  
 ```
 mysql -u root
@@ -71,6 +73,25 @@ To sort persons by age, I used ***ORDER BY***:
 SELECT * FROM users WHERE id > 0 ORDER BY age;
 ```
 ![SQL ORDER BY](screenshots/sql_order_by.png)  
+
+Create two new tables:  
+```
+CREATE TABLE profession(id INT(5) AUTO_INCREMENT PRIMARY KEY, user_id INT(5), FOREIGN KEY (user_id)  references users(id), profession VARCHAR(32));
+CREATE TABLE salary(id INT(5) AUTO_INCREMENT PRIMARY KEY, user_id INT(5), FOREIGN KEY (user_id)  references users(id), salary int(6));
+```
+![Two tables](screenshots/two_tables.png)  
+Add some info into the tables:  
+```
+INSERT INTO profession (user_id, profession) VALUES (1, "profession1"), (2, "second_profession"), (1, "third_prof"), (1, "four_prof");
+INSERT INTO salary (user_id, salary) VALUES (1, 1000),  (1, 1000), (2, 2000), (3, 3000) ,(4, 4000);
+```
+![Select from the two tables](screenshots/select_from_two_tables.png)  
+Make JOIN:  
+```
+SELECT user.id, profession.profession FROM users INNER JOIN profession ON users.id = profession.user_id;
+SELECT user.id, salary.salary FROM users INNER JOIN salary ON users.id = salary.user_id;
+```
+![Make JOIN](screenshots/join_tables.png)  
 ***DDL***:
 ----------
 *Rename*:  
@@ -136,7 +157,7 @@ DROP USER 'second_user'@'localhost';
 DROP USER 'third_user'@'localhost';
 ```
 ![Drop users](screenshots/drop_user.png)  
-
+</details>
 
 
 
