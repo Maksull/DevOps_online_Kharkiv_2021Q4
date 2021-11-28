@@ -1,4 +1,4 @@
-<details><summary>TASK 3.1</summary>
+<details><summary>PART 1</summary>
   
 After installing ***mysql*** on the station I *need to login*, I used:  
 ```
@@ -159,5 +159,43 @@ DROP USER 'third_user'@'localhost';
 ![Drop users](screenshots/drop_user.png)  
 </details>
 
+<details><summary>PART 2</summary>
+  
+***MYSQLDUMP***
+-------
+***Make backup*** of my DB:
+```
+mysqldump -u root -h localhost test > test_back.sql                               // One DB  
+mysqldump -u root -h localhost —databases test mysql > test_mysql_back.sql        // Several DB  
+mysqldump -u root -h localhost —all-databases > all_db_back.sql                   // All DB
+```
+Restore DB:  
+```
+mysql -u root -h localhost test_back < test_back.sql      // One DB 
+mysql -u root -h localhost  < all_db_back.sql             // Several DB
+mysql -u root -h localhost  < test_mysql_back.sql         // All DB
+```
 
-
+***RDS***
+-------                                                 
+Create ***a database on RDS***:  
+![RDS create a database](screenshots/rds_create_database.png)  
+After creating find ***the endpoint***:  
+![RDS endpoint](screenshots/rds_endpoint.png)  
+To connect to RDS database, I used:  
+```
+mysql -u account_name -h endpoint -p
+mysql -u admin -h database-1.cpsysojpeix1.eu-central-1.rds.amazonaws.com -p
+```
+Databases in the RDS database:  
+![RDS databases](screenshots/rds_show_databases.png)  
+To transfer my local database, I used:  
+```
+mysql -u admin -h database-1.cpsysojpeix1.eu-central-1.rds.amazonaws.com -p test_table < test_back.sql
+```
+![RDS SHOW SELECT](screenshots/rds_show_select.png)  
+To make backup from the RDS database, I used:  
+```
+mysqldump -u admin -h database-2.cpsysojpeix1.eu-central-1.rds.amazonaws.com -p test_table > test_table_back.sql
+```                                                
+</details>
