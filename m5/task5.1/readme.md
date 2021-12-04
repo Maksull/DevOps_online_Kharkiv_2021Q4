@@ -214,7 +214,7 @@ List the first 5 directory file that were recently accessed in the /etc director
 ```
 ls -lta | head -n 6
 ```
-***-t*** - sort by time, newest first
+***-t*** - sort by time, newest first  
 ![ls -t + head](screenshots/ls_head.png)  
 
 
