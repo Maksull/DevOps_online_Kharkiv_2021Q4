@@ -1,4 +1,5 @@
-# PART 1
+<details><summary>PART 1</summary>
+  
 Log in into the system as root:  
 ```
 sudo su - root
@@ -57,6 +58,27 @@ ps -a
 ps -d
 ```
 ![ps + option](screenshots/ps_example.png)  
+To see the content of a file you can use ***more*** or ***less***. To see the documentation about these commands, I used:  
+```
+man more
+man less
+```
+***more*** - is a filter for paging through text one screenful at a time.  
+***less*** - is a program similar to more(1), but which allows backward movement in the file as well as forward movement.  
+*more and less* have the option to view multiple files at once. *more* allows us to view them as a single file separated by lines, and *less* allows us to switch between them.
+However, both *more and less* display all the opened files with the same options.  
+![more](screenshots/more.png)  
+![less](screenshots/less.png)  
+To display a content of the home directory, I used ***ls*** command with some keys:  
+```
+ls -lah
+```
+*-a* - do not ignore entries starting with  
+*-h* - make the output more readable for people  
+*-l* - use a long listing format  
+![ls](screenshots/ls.png)  
+
+</details>
 
 
 
