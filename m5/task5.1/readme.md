@@ -135,13 +135,94 @@ To remove a directory you can use ***rm*** with ***-r key***:
 rm -r test_dir
 ```
 ![rm -r](screenshots/rm_r_directory.png)  
-
-
-
-
+Copy .bash_history to the test directory while changing its nam to labwork2:  
+```
+mkdir test
+cp .bash_history test/labwork2
+```
+![cp bash_history](screenshots/cp_bash_history.png)  
+Create a soft link and hard link to the labwork2:
+```
+ln -s labwork2 s_link
+ln labwork h_link
+```
+***ln -s*** - create a soft link  
+***ln*** - create a hard link
+A *symbolic or soft link* is an actual **link to the original file**, whereas a *hard link* is a mirror **copy of the original file**.  
+![ln](screenshots/create_link.png)  
+To rename the links use ***mv***:
+```
+mv s_link symb_lnk_labwork2
+mv h_link hard_lnk_labwork2
+```
+![mv](screenshots/rename_link.png)  
+Delete the origin:  
+```
+rm labwork2
+```
+After that ***the soft link doesn't work***, but ***the hard link works***, because the second creates the copy, while the first one is just link to the origin  
+![rm](screenshots/rm_labwork2.png)  
+Use ***locate*** command:  
+```
+locate squid
+locate traceroute
+```
+![locate](screenshots/locate.png)  
+Determine mounted partitions:  
+```
+ls -la /dev | grep sd
+```
+***b*** symbol means block devices 
+***sd*** - device connected by SCSI
+The letter immediately after ***sd*** signifies the order in which it was first found.  
+***The number after that signifies*** the partition on the device.  
+![dev](screenshots/dev.png)  
+To count the lines with the symbol, I used ***grep + wc***:  
+```
+cat .gitconfig | grep e | wc -l
+```
+![grep + wc](screenshots/grep_wc.png)  
+Using find command to find all files in the /etc directory containing the host character sequence:  
+```
+sudo find -name host
+```
+![find](screenshots/find_host.png)  
+List all objects in /etc that contain the ss character sequence using ***ls + grep***:  
+```
+ls -la | grep ss
+```
+![ls + grep](screenshots/ls_grep.png)  
+Organize screen-by-screen print of the content of the /etc directory using ***pipeline and less***:  
+```
+ls -la | less
+```
+![pipeline less](screenshots/etc_less.png)  
+In UNIX, and therefore Linux, ***there are two types of devices***: *block devices* direct access (such as disks) and *symbolic devices* such as
+tape drives and serial ports), some of which may be consistent, and some with direct access. The ***'b'*** - denote linux block devices, and the symbol ***'c'*** - symbolic (character).
+```
+ls -la /dev | grep cr
+ls -la /dev | grep br
+```
+![der cr](screenshots/dev_cr.png)  
+![der br](screenshots/dev_br.png)  
+You can determine the file type using the ***file*** command.  
+There are three types of files in linux:
+1. Catalog (directory)
+2. Binary
+3. Text (ASCII text)
+List the first 5 directory file that were recently accessed in the /etc directory:  
+```
+ls -lta | head -n 6
+```
+***-t*** - sort by time, newest first
+![ls -t + head](screenshots/ls_head.png)  
 
 
 </details>
+
+
+
+
 
 
 
