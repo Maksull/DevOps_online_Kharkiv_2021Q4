@@ -55,5 +55,38 @@ SHELL=/bin/bash
 SKEL=/etc/skel
 CREATE_MAIL_SPOOL=yes
 ```
+  
+To delete a user user:  
+```
+deluser NAME
+```
+The ```passwd``` command ***changes passwords*** for user accounts. A normal user may only change the password for their own account, while the superuser may change the password for any account. 
+```
+Passwd -S name - View user status
+Passwd -l name - Block user
+Passwd -u name - Unlock User
+Passwd -d username - Delete user password
+P - password set, L - user locked, NP - no password
+```
+  
+***Read*** - allows you to receive the contents of the file, but not writable. For
+directory allows you to get a list of files and directories located in him;  
+***Write*** - allows you to write new data to a file or change existing ones, and
+also allows you to create and modify files and directories;  
+***Execution*** - you cannot execute a program if it does not have one execution flag. This attribute is set for all programs and scripts, 
+it is with its help the system can understand that this the file must be run as a program.  
+- *---* - no rights at all;
+- *--x* - only executing a file as a program is allowed but not modifying and notreading;
+- *-w-* - only writing and modifying a file is allowed;
+- *-wx* - change and execution is allowed, but in the case of a directory, you are not you can see its contents;
+- *r--* - read-only rights;
+- *r-x* - read and execute only;
+- *rw-* - read and write rights only;
+- *rwx* - all rights;
+- *--s* - set SUID or SGID bit, the first is displayed in the field for the owner, the second for the group;
+- *--t* - sticky-bit is set, which means users can't delete it this file.
+
+
+
 
 
