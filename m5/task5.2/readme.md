@@ -36,6 +36,7 @@ You can define it using ```the /etc/passwd, the /etc/group``` or ```id command``
 To define the users of group use ```the /etc/group```. ***The fourth point*** is the users included in the group. Or you can use ```groups``` command.
   
 ![id command](screenshots/id_command.png)  
+![groups command](screenshots/groups_command.png)  
 
 
 ----------
@@ -71,6 +72,8 @@ SHELL=/bin/bash
 SKEL=/etc/skel
 CREATE_MAIL_SPOOL=yes
 ```
+![skell_dir](screenshots/skell_dir.png)  
+
   
 DELETE AN USER
 -------------
@@ -108,6 +111,18 @@ P - password set, L - user locked, NP - no password
 ![passwd](screenshots/2_passwd.png)  
 
   
+INFORMATION COLUMNS
+-------------
+![information columns](screenshots/information_columns.png)  
+
+1. Inodes of a file or a directory  
+2. Access rights  
+3. Amount of links to a file or a directory 
+4. The owner and the group 
+5. The size 
+6. Last time of touching  
+7. The name 
+
 ACCESS RIGHTS
 -------------
 ***Read*** - allows you to receive the contents of the file, but not writable. For
@@ -158,8 +173,10 @@ umask -keys mask_in_octal_form
   
 STICKY BIT
 -------------
-Sticky bit - additional attribute for files and directories for which set this bit, deleting and / or renaming files could do only their owners or privileged user.
+Sticky bit - additional attribute for files and directories for which set this bit, deleting and / or renaming files could do only their owners or privileged user.  
 ![sticky_bit](screenshots/1_sticky_bit.png)  
+![sticky_bit](screenshots/2_sticky_bit.png)  
+
 
 -------------
 For command scripts must be present read(r) and execute(x) attributes:  
