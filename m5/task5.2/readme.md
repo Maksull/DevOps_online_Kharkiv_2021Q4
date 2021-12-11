@@ -34,6 +34,9 @@ You can define it using ```id command``` or ```the /etc/passwd```
 You can define it using ```the /etc/passwd, the /etc/group``` or ```id command```
   
 To define the users of group use ```the /etc/group```. ***The fourth point*** is the users included in the group. Or you can use ```groups``` command.
+  
+![id command](screenshots/id_command.png)  
+
 
 ----------
 They are two commands to ***add a new user***:
@@ -50,6 +53,10 @@ while *useradd is a low-level utility command* to add users.
 The ```usermod``` command modifies the system account files to reflect the changes that are specified on the command line.  
 *-l* The name of the user will be changed from LOGIN to NEW_LOGIN.
   
+![Usermod](screenshots/1_usermod.png)  
+![Usermod](screenshots/2_usermod.png)  
+
+
 SKELL_DIR
 -------------
 ```The /etc/skel``` directory *contains files and directories that are automatically copied over to a new user's home directory* when such user is created by the useradd program.
@@ -97,6 +104,9 @@ Passwd -u name - Unlock User
 Passwd -d username - Delete user password
 P - password set, L - user locked, NP - no password
 ```
+![passwd](screenshots/1_passwd.png)  
+![passwd](screenshots/2_passwd.png)  
+
   
 ACCESS RIGHTS
 -------------
@@ -120,6 +130,8 @@ it is with its help the system can understand that this the file must be run as 
 -----------
   
 To see the rights of an user to a file you can use ```ls``` with ```-l``` key.
+  
+![ls_l](screenshots/ls_l.png)  
 
 To change the owner of a file use:  
 ```
@@ -129,6 +141,9 @@ To change the access rights of a file use:
 ```
 chmod rights file
 ```
+![chown](screenshots/chown.png)   
+![chmod](screenshots/chmod.png)  
+
   
 UMASK
 -------------
@@ -144,6 +159,7 @@ umask -keys mask_in_octal_form
 STICKY BIT
 -------------
 Sticky bit - additional attribute for files and directories for which set this bit, deleting and / or renaming files could do only their owners or privileged user.
+![sticky_bit](screenshots/1_sticky_bit.png)  
 
 -------------
 For command scripts must be present read(r) and execute(x) attributes:  
