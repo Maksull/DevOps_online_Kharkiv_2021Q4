@@ -1,3 +1,5 @@
+/etc/passwd and /etc/group
+-------------
 The structure of the /etc/passwd file:  
 1. Username: It is used when user logs in. It should be between 1 and 32 characters in length.
 2. Password: A x character indicates that encrypted password is stored in /etc/shadow file. A * character means that this account is temporarily disabled. A set of random characters and numbers - indicate the user's password in encrypted form.
@@ -13,12 +15,16 @@ The structure of the /etc/group file:
 3. Group ID (GID): Each user must be assigned a group ID.
 4. Group List: It is a list of user names of users who are members of the group.  
   
+PSEUDOUSERS
+-------------
 ***Pseudousers*** have UID from 100 till 999.
-Pseudousers example:
-• daemon - Used by system service processes
-• bin - Gives the right to own executable command files
-• sys - Owns system files
+Pseudousers example:  
+• daemon - Used by system service processes  
+• bin - Gives the right to own executable command files  
+• sys - Owns system files  
   
+UID and GID
+-------------
 ***UID*** - an unique user ID within the system. UID the user can be found in the / etc / passwd file.  
 UID 1-500 is usually reserved for system users. In Ubuntu I The Fedora UID for new users starts at 1000.   
 The Linux UID and GID are ***0 reserved for the root user***.
@@ -29,6 +35,7 @@ You can define it using ```the /etc/passwd, the /etc/group``` or ```id command``
   
 To define the users of group use ```the /etc/group```. ***The fourth point*** is the users included in the group. Or you can use ```groups``` command.
 
+----------
 They are two commands to ***add a new user***:
 ```
 useradd
@@ -58,7 +65,7 @@ SKEL=/etc/skel
 CREATE_MAIL_SPOOL=yes
 ```
   
-DELETE A USER
+DELETE AN USER
 -------------
 To delete a user use ```deluser``` or ```userdel```.   
 The Linux ```userdel``` command can be used ***to delete user accounts***. This command ***can only be used by root users***. ```userdel``` can delete user accounts and related files. If no parameters are added, only *the user account will be deleted*, and the *related files will not be deleted*. The ```-r``` option means to delete the user’s home directory while deleting the user.  
@@ -99,17 +106,17 @@ directory allows you to get a list of files and directories located in him;
 also allows you to create and modify files and directories;  
 ***Execution*** - you cannot execute a program if it does not have one execution flag. This attribute is set for all programs and scripts, 
 it is with its help the system can understand that this the file must be run as a program.  
-- *---* - no rights at all;
-- *--x* - only executing a file as a program is allowed but not modifying and notreading;
-- *-w-* - only writing and modifying a file is allowed;
-- *-wx* - change and execution is allowed, but in the case of a directory, you are not you can see its contents;
-- *r--* - read-only rights;
-- *r-x* - read and execute only;
-- *rw-* - read and write rights only;
-- *rwx* - all rights;
-- *--s* - set SUID or SGID bit, the first is displayed in the field for the owner, the second for the group;
-- *--t* - sticky-bit is set, which means users can't delete it this file.
-  
+- ```---``` - no rights at all;
+- ```--x``` - only executing a file as a program is allowed but not modifying and notreading;
+- ```-w-``` - only writing and modifying a file is allowed;
+- ```-wx``` - change and execution is allowed, but in the case of a directory, you are not you can see its contents;
+- ```r--``` - read-only rights;
+- ```r-x``` - read and execute only;
+- ```rw-``` - read and write rights only;
+- ```rwx``` - all rights;
+- ```--s``` - set SUID or SGID bit, the first is displayed in the field for the owner, the second for the group;
+- ```--t``` - sticky-bit is set, which means users can't delete it this file.
+ 
 -----------
   
 To see the rights of an user to a file you can use ```ls``` with ```-l``` key.
@@ -122,11 +129,27 @@ To change the access rights of a file use:
 ```
 chmod rights file
 ```
+  
+UMASK
+-------------
+The ```umask``` utility ***sets the file creation mode mask*** in the current shell environment to the value specified by the mask operand. *This mask affects the initial value of the permissions bits* of all files or directories that are created next. When creating any file, ***the operating system asks for a rights mask*** and calculates the mask based on it. The **default mask is 0002**. The first digit does not affect anything and is a relic of the C language syntax. Further, the numbers are similar to the access rights in Linux: *the first is the owner*, *the second is the group*, and *the third is all the rest users*. The default access rights for the file will be 666 - 002 = 664, and for the directory - 777 - 002 = 775.  
+***You are not able to allow the execution of files using a mask***. The x flag can be masked only for directories. Since *file permissions are calculated based on permissions 666*, in which execution is already disabled rw-rw-rw, the mask cannot do anything here. But everything works for *directories, because 777 rights are used*.
+To change the mask use:
+```
+umask -keys mask_in_octal_form
+```
+- ```-p``` After executing will display current mask in ***octal form***
+- ```-S``` After executing will display current mask in ***u=rwx, g=rwx, o=rwx form***  
+  
+STICKY BIT
+-------------
+Sticky bit - additional attribute for files and directories for which set this bit, deleting and / or renaming files could do only their owners or privileged user.
 
-
-
-
-
+-------------
+For command scripts must be present read(r) and execute(x) attributes:  
+```
+chmod +rx file_name
+```
 
 
 
