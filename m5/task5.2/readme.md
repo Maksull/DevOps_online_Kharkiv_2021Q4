@@ -27,7 +27,7 @@ You can define it using ```id command``` or ```the /etc/passwd```
 ***GID*** - is an unique identifier of the group within the system to which it belongs user.
 You can define it using ```the /etc/passwd, the /etc/group``` or ```id command```
   
-To define the users of group use ```the /etc/group```. ***The fourth point*** is the users included in the group.
+To define the users of group use ```the /etc/group```. ***The fourth point*** is the users included in the group. Or you can use ```groups``` command.
 
 They are two commands to ***add a new user***:
 ```
@@ -43,6 +43,8 @@ while *useradd is a low-level utility command* to add users.
 The ```usermod``` command modifies the system account files to reflect the changes that are specified on the command line.  
 *-l* The name of the user will be changed from LOGIN to NEW_LOGIN.
   
+SKELL_DIR
+-------------
 ```The /etc/skel``` directory *contains files and directories that are automatically copied over to a new user's home directory* when such user is created by the useradd program.
 ```The /etc/defualt/useradd``` is *the file which defines the skel directory*. You can change the default location /etc/skel to any other location.  
 The /etc/default/useradd: 
@@ -56,10 +58,30 @@ SKEL=/etc/skel
 CREATE_MAIL_SPOOL=yes
 ```
   
-To delete a user user:  
+DELETE A USER
+-------------
+To delete a user use ```deluser``` or ```userdel```.   
+The Linux ```userdel``` command can be used ***to delete user accounts***. This command ***can only be used by root users***. ```userdel``` can delete user accounts and related files. If no parameters are added, only *the user account will be deleted*, and the *related files will not be deleted*. The ```-r``` option means to delete the user’s home directory while deleting the user.  
+The ```deluser``` command can be used ***to delete users***. ```deluser``` has richer options and more powerful functions than ```userdel```. There are more options to specify when deleting a user:  
 ```
-deluser NAME
+--remove-home       delete the user’s home directory and mailbox  
+--remove-all-files  delete all files owned by the user  
+--backup            Back up files before deleting.  
+--backup-to<DIR>    The destination directory of the backup. The default is the current directory.  
+``` 
+    
+Delete a user from the system wtih all files:  
 ```
+deluser --remove-all-files NAME
+userdel -r NAME
+```
+Delete a user from a group:
+```
+deluser USER_NAME GROUP_NAME
+```
+  
+PASSWD COMMAND
+-------------
 The ```passwd``` command ***changes passwords*** for user accounts. A normal user may only change the password for their own account, while the superuser may change the password for any account. 
 ```
 Passwd -S name - View user status
@@ -69,6 +91,8 @@ Passwd -d username - Delete user password
 P - password set, L - user locked, NP - no password
 ```
   
+ACCESS RIGHTS
+-------------
 ***Read*** - allows you to receive the contents of the file, but not writable. For
 directory allows you to get a list of files and directories located in him;  
 ***Write*** - allows you to write new data to a file or change existing ones, and
@@ -85,6 +109,22 @@ it is with its help the system can understand that this the file must be run as 
 - *rwx* - all rights;
 - *--s* - set SUID or SGID bit, the first is displayed in the field for the owner, the second for the group;
 - *--t* - sticky-bit is set, which means users can't delete it this file.
+  
+-----------
+  
+To see the rights of an user to a file you can use ```ls``` with ```-l``` key.
+
+To change the owner of a file use:  
+```
+chown user:group file
+```
+To change the access rights of a file use:
+```
+chmod rights file
+```
+
+
+
 
 
 
