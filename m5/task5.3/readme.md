@@ -25,7 +25,7 @@ They're processes that have completed their execution, but their entries are not
 <h3>IDLE</h3>    
 Special task loaded by the OS scheduler on a CPU when there is nothing for the CPU to do
   
-2)--  
+2)pstree shows running processes as a tree.  The tree is rooted at either pid or init if pid is omitted.  If a user name is specified, all process trees rooted at processes owned by that user are shown.  
 ![pstree example](screenshots/pstree_example.png)  
 ![pstree current](screenshots/pstree_current.png)  
 
@@ -119,15 +119,19 @@ You can use ```top/htop -u user_name``` to see the **process of the user** or yo
 ![top -u](screenshots/top_u.png)  
 
 <h4>Switch to color mode</h4>
-You can use the ```z button``` to switch between monochrome and multicolored reflection.
-  
+You can use the ```z button``` to switch between monochrome and multicolored reflection.  
+![top + z](screenshots/top_z.png)  
+
 <h4>Use of bold selection</h4>
-Some data, for example, tasks that consume a lot of CPU time, stand out bold. This is the default behavior. It is possible disable/enable with ```b button```.
+Some data, for example, tasks that consume a lot of CPU time, stand out bold. This is the default behavior. It is possible disable/enable with ```b button```.  
+![top + b](screenshots/top_b.png)  
   
 <h4>Highlight the column used for sorting</h4>
-If you forgot which column is used for sorting, then click the ```x button``` and this column will be highlighted in bold.  
+If you forgot which column is used for sorting, then click the ```x button``` and this column will be highlighted in bold.    
+![top + x](screenshots/top_x.png)  
   
-To *sort the processes* via ```top/htop``` you can ***push F6 button*** and then *choose what you need to sort by*.
+To *sort the processes* via ```top/htop``` you can ***push F6 button*** and then *choose what you need to sort by*.  
+![htop + f6](screenshots/htop_f6.png)  
 
 PRIORITY
 --------------
