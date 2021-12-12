@@ -94,7 +94,10 @@ To display all the processes of a user you can use use ```ps``` with ```-u``` ke
 
 ![ps -u](screenshots/ps_u.png)  
 
-9)--
+To check the alternativies of ```ps``` command you can use ```man ps```.  
+![man](screenshots/man_ps.png)  
+```pgrep``` looks through the currently running processes and lists the process IDs which match the selection criteria to stdout.  All the criteria have to match.  
+
 
 TOP/HTOP
 --------------
@@ -143,6 +146,9 @@ the command issues the current one priority of work. n defaults to 10. Priority 
 ```renice [priority value] -p [process id]``` - ***change the priority to existing process*** 
 
 Or you can change the priority via ```top/htop```. Just push ```+-``` in program.
+
+![nice](screenshots/nice.png)  
+
   
   
 SIGNALS
@@ -166,4 +172,14 @@ The jobs utility shall display the status of jobs that wereb started in the curr
 - ```Bg``` - continue the process in the background  
 - ```Fg``` - output the process from the background  
   
+![jobs](screenshots/jobs.png)  
+
+A + (plus sign) identifies the job that will be used as a default for the fg or bg commands. This job ID can also be specified using the %+ (percent sign, plus) or %% (double percent sign). A - (minus sign) identifies the job that becomes the default if the current default job exits
 ```nohup``` - allows the process to continue running even when loss of control terminal (SIGHUP). 
+
+
+
+
+
+
+
