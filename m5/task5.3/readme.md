@@ -178,7 +178,47 @@ A + (plus sign) identifies the job that will be used as a default for the fg or 
 ```nohup``` - allows the process to continue running even when loss of control terminal (SIGHUP). 
 
 
+<details><summary>SSH</summary>
+```ssh-keygen``` - generate a keys 
+```ssh user@host``` - coonect via SSH
+```ssh user@host command``` - coonect via SSH and do command  
+![powershell ssh1](screenshots/powershell_ssh_1.png)  
+![powershell ssh2](screenshots/powershell_ssh_2.png)  
+![MobaXTerm ssh1](screenshots/mobaxterm_ssh_1.png)  
+![MobaXTerm ssh2](screenshots/mobaxterm_ssh_2.png)  
 
+To improve the security of the connection you can:  
+1. Strong password
+2. Disable empty password
+3. Limited users have SSH access
+4. Disable root login
+5. Use only SSH protocol 2
+6. Don't use 22 port
+7. Use public and private keys for authentication
+You can change these setting in /etc/ssh/sshd_config  
+![ssh change port](screenshots/ssh_change_port.png)  
+
+There are 6 encryption algoritms for ```ssh-keygen```:  
+1. dsa
+2. ecdsa
+3. ecdsa-sk
+4. ed25519
+5. ed25519-sk
+6. rsa  
+  
+![keygen rsa](screenshots/keygen_rsa.png)  
+![keygen dsa](screenshots/keygen_dsa.png)  
+![keygen ecdsa](screenshots/keygen_ecdsa.png)  
+  
+SSH via NAT
+![SSH NAT](screenshots/ssh_nat.png)  
+  
+TCPDUMP
+![TCPDUMP](screenshots/tcpdump.png)  
+
+
+
+</details>
 
 
 
