@@ -179,6 +179,7 @@ A + (plus sign) identifies the job that will be used as a default for the fg or 
 
 
 <details><summary>SSH</summary>
+    
 ```ssh-keygen``` - generate a keys 
 ```ssh user@host``` - coonect via SSH
 ```ssh user@host command``` - coonect via SSH and do command  
