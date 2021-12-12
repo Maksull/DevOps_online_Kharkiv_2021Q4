@@ -213,7 +213,7 @@ There are 6 encryption algoritms for ```ssh-keygen```:
 SSH via NAT
 ![SSH NAT](screenshots/ssh_nat.png)  
   
-TCPDUMP
+TCPDUMP  
 ![TCPDUMP](screenshots/tcpdump.png)  
 
 
