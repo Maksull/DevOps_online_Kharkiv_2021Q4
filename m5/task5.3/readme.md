@@ -216,7 +216,7 @@ SSH via NAT
   
 TCPDUMP  
 ![TCPDUMP](screenshots/tcpdump.png)  
-
+ssh encrypts data during transmission, but telnet does not
 
 
 </details>
