@@ -77,11 +77,30 @@ ip route show
 ![VM2 host route](screenshots/vm2_add_host_route.png)  
 And, finally, check connection between VM2 and the host, VM2 and the Internet.  
 ![VM2 ping host int](screenshots/vm2_ping_int_host.png)  
-
-
-
-
-
+  
+------
+  
+To determine the owner of 8.8.8.8, I used ```whois```:
+```
+whois 8.8.8.8
+```
+![Whois](screenshots/whois.png)  
+To determine the ***IP*** of *epam.com*, I used **Powershell** and ```dig```
+```
+dig epam.com
+```
+![Powershell epam.com](screenshots/powershell_epam.png)  
+![dig epam.com](screenshots/dig_epam.png)  
+To determine the default gateway of my PC, I used ```ipconfig``` via Powershell
+![Powershell ipconfig](screenshots/windows_gateway.png)  
+To display routing table, I used:
+```
+route  print
+netstat - rn
+```
+![Routing table](screenshots/windows_routing_table.png)  
+My ```tracert``` to the google.com:  
+![Tracert google.com](screenshots/traceroute_google.png)  
 
 
 
