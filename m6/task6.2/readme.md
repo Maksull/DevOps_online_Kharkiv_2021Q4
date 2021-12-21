@@ -32,3 +32,52 @@ The result:
 ![VBoxManage dhcpserver](screenshots/vboxmanage_dhcp_result.png)  
 
 </details>
+
+<details><summary>USING ISC-DHCP-SERVER</summary>
+   
+First of all **stop the process of isc-dhcp-server**:
+```
+sudo service isc-dhcp-server stop
+```
+Set an interface that *connected with internal network* (enp0s8 in my case):  
+```
+sudo nano /etc/default/isc-dhcp-server
+```
+![ISC-DHCP-SERVER set an interface](screenshots/iscdhcp_set_interface.png)  
+Configure the ***dhcp server***:
+```
+sudo nano /etc/dhcp/dhcpd.conf
+```
+![ISC-DHCP-SERVER configure dhcp](screenshots/iscdhcp_configure_dhcp.png)  
+- ```range``` - the range for the ip addresses that the dhcp can assign
+- ```option domain-name-servers``` - the IP adress of DNS server
+- ```option domain-name``` - domain name
+- ```option subnet-mask``` - the mask that will be given to the devices
+- ```option routers``` - default gateway 
+- ```option broadcast-address``` - the broadcast
+- ```default-lease-time``` - this is the period for which the DHCP server assigns an IP address to the client
+- ```max-lease-time``` - max period for which the DHCP server assigns an IP address to the client
+  
+In the end of the configuration **start the isc-dhcp-server**:
+```
+sudo service isc-dhcp-server start
+```
+The result:  
+![ISC-DHCP-SERVER result](screenshots/iscdhcp_result.png)  
+
+</details>
+  
+<details><summary>USING DNSMASQ</summary>
+  
+</details>
+
+--------------
+
+
+
+
+
+
+
+
+
