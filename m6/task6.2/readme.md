@@ -1,11 +1,11 @@
 *VM1* has two interfaces: **NAT and internal**   
-![VM1 interfaces](screenshots/vm1_interfaces)   
+![VM1 interfaces](screenshots/vm1_interfaces.png)   
 *VM2* and *VM3* have one interface: **internal**  
-![VM2 interfaces](screenshots/vm2_interfaces)  
-![VM3 interfaces](screenshots/vm3_interfaces)  
+![VM2 interfaces](screenshots/vm2_interfaces.png)  
+![VM3 interfaces](screenshots/vm3_interfaces.png)  
 
 
-COFIGURE DHCP SERVER
+CONFIGURE DHCP SERVER
 --------------
 <details><summary>USING VBOXMANAGE</summary>
   
@@ -22,13 +22,13 @@ To see *the list of current dhcp servers* use:
 ```
 vboxmanage list dhcpserver
 ```
-![VBoxManage dhcpserver](screenshots/vboxmanage_configure_dhcp)  
+![VBoxManage dhcpserver](screenshots/vboxmanage_configure_dhcp.png)  
 To *change the setting* of the dhcpserver use ```vboxmanage dhcpserver modify```:
 ```
 vboxmanage dhcpserver modify —netname mynet —lowerip 192.168.2.101 —upperip 192.168.2.120
 ```
-![VBoxManage modify dhcpserver](screenshots/vboxmanage_modify_dhcp)  
+![VBoxManage modify dhcpserver](screenshots/vboxmanage_modify_dhcp.png)  
 The result:  
-![VBoxManage dhcpserver](screenshots/vboxmanage_dhcp_result)  
+![VBoxManage dhcpserver](screenshots/vboxmanage_dhcp_result.png)  
 
 </details>
