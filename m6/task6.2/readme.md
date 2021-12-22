@@ -69,6 +69,43 @@ The result:
   
 <details><summary>USING DNSMASQ</summary>
   
+Open file ```/etc/dnsmasq.conf```.  
+Then find and uncomment following things: 
+- ***interface=***
+```
+interface=enp0s8
+```
+- ***dhcp-range=***
+```
+dhcp-range=192.168.2.23, 192.168.2.31, 24h
+```
+- ***dhcp-option=***
+```
+dhcp-option=3,192.168.2.1
+```
+*3* - means default gateway  
+- ***dhcp-host=***
+```
+dhcp-host=08:00:27:ae:5e:fb,192.168.2.23
+dhcp-host=08:00:27:9b:d6:e1,192.168.2.24
+```
+- ***dhcp-authoritative***  
+  
+When the DHCP server is configured as ***authoritative, the server will respond with DHCP ACK or NACK*** as appropriate for all the received DHCP REQUEST and DHCP INFORM packets belonging to the subnet. ***Non-authoritative DHCP INFORM packets received from the clients on a non-authoritative pool will be ignored***.  
+After that turn off the things that may have conflictwith **DNSMASQ**:
+```
+sudo systemctl disable systemd-resolved
+sudo systemctl mask systemd-resolved
+sudo systemctl stop systemd-resolved
+``` 
+And then start your **DNSMASQ**:
+```
+sudo systemctl start DNSMASQ
+```
+The result:  
+![DNSMASQ DHCP result](screenshots/dnsmasq_dhcp_result.png)  
+
+  
 </details>
 
 --------------
