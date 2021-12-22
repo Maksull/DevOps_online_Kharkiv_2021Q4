@@ -104,15 +104,29 @@ sudo systemctl start DNSMASQ
 ```
 The result:  
 ![DNSMASQ DHCP result](screenshots/dnsmasq_dhcp_result.png)  
-
   
 </details>
 
 --------------
 
+CONFIGURE DNS SERVER
+--------------
+
+<details><summary>USING DNSMASQ</summary>
+  
+Open the file ```/etc/dnsmasq.conf```.  
+Then find and uncomment following things: 
+- ***expand-host***
+  
+It says that it will be used the domains from ```/etc/hosts```.  
+Open the file ```/etc/hosts```. And write your domains:  
+![DNSMASQ DNS hosts](screenshots/dnsmasq_dns_hosts.png)  
+The result:  
+![DNSMASQ DNS result](screenshots/dnsmasq_dns_result.png)  
 
 
-
+  
+</details>
 
 
 
