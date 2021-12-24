@@ -45,7 +45,7 @@ fi
 
 exit 0
 ```
-![script_a](screenshots/script_a)
+![script_a](screenshots/script_a.png)
 
 -------
 
@@ -71,7 +71,7 @@ print every second line and count them(n=n+1),  add **TOTAL** and numbers of **I
 ```column -t``` - formats its input into multiple columns. ```-t --table``` - create a table  
   
 **The result**:  
-![script_a result](screenshots/script_a_result)
+![script_a result](screenshots/script_a_result.png)
 
 
 
