@@ -170,7 +170,7 @@ exit 0
 </details>
 
 
-**The result: **  
+**The result:**  
 ![script_b_mrip](screenshots/script_b_mrip.png)  
 ![script_b_mrpa ](screenshots/script_b_mrpa.png)  
 ![script_b_non_existent_pages_visited](screenshots/script_b_non_existent_pages_visited.png)  
