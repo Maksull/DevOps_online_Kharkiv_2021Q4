@@ -175,35 +175,35 @@ SCRIPT_C
 #!/bin/bash
 
 function destination_copy_skip_remove() {
-	#copy_skip
-	for file in $(find $1 -printf "%P\n")
-	do 
-	if [ ! -a $2/$file ]
-	then 
-	  if [ $1/$file -nt $2/$file ]
-	  then 
-	  	echo $3 $file COPY
-	    cp -r $1/$file $2/$file
-	  else
-	  	echo $3 $file SKIP
-	  fi
-	else
-		echo $3 $file COPY
-	  cp -r $1/$file $2/$file
-	fi
-	done
-	#delete
-	for file in $(find $2 -printf "%P\n")
-    do 
-    if [[ (( -a $2/$file) && (! -a $1/$file)) && ( "$file" != "backup_log" ) ]]
-    then 
-        echo $3 $file DELETE
-    	rm -r "$2/$file"
-    fi
-    done
+#copy_skip
+for file in $(find $1 -printf "%P\n")
+do 
+if [ -a $2/$file ]
+then 
+  if [ $1/$file -nt $2/$file ]
+  then 
+  	echo $3 $file COPY
+    cp -r $1/$file $2/$file
+  else
+  	echo $3 $file SKIP
+  fi
+else
+	echo $3 $file COPY
+  cp -r $1/$file $2/$file
+fi
+done
+#delete
+for file in $(find $2 -printf "%P\n")
+do 
+if [[ (( -a $2/$file) && (! -a $1/$file)) && ( "$file" != "backup_log" ) ]]
+then 
+    echo $3 $file DELETE
+    rm -r "$2/$file"
+fi
+done
 }
 
-if [[ "$#" == "0" || "$#" == "1" ]]
+if [[ "$#" < "2" ]]
 then
 	echo -e "\033[31m$0\033[0m has to take \033[31m2 parameters:\033[0m source, destination"
 	exit 1
@@ -235,6 +235,16 @@ destination_copy_skip_remove $source $destination $dt | awk 'BEGIN {print "\033[
 -------
 
 </details>
+
+```if [ ! -d "$1" ]``` - check the existance of the souce directory  
+```for file in $(find $1 -printf "%P\n")``` - create a loop that go threw all the files in the ***souce*** directory  
+```if [ -a $2/$file ]``` - check if the file in the destination, if no it will be just copied to the destionation  
+```if [ $1/$file -nt $2/$file ]``` - if in the source newer version than in the destionation than it will be copied, else no  
+  
+```for file in $(find $2 -printf "%P\n")``` - create a loop that go threw all the files in the ***destination*** directory  
+```if [[ (( -a $2/$file) && (! -a $1/$file)) && ( "$file" != "backup_log" ) ]]``` - if a file exist in ***the destination*** but not in ***the source*** and it is not a backup_log it will be deleted from ***the detination***  
+  
+```tee -a $destination/backup_log``` - redirect the output to *the backup_log* and to *the console*  
 
 **The result:**  
 ![script_c result1](screenshots/script_c_result1.png)  
