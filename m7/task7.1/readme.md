@@ -45,7 +45,6 @@ fi
 
 exit 0
 ```
-![script_a](screenshots/script_a.png)
 
 -------
 
@@ -144,28 +143,17 @@ else
 	search_size=$3
 fi
 
-if [ "$1" == "--mrip" ]
-then
-	mrip $log_name $search_size
-elif [ "$1" == "--mrpa" ]
-then
-	mrpa $log_name $search_size
-elif [ "$1" == "--non-existent-pages-visited" ]
-then
-	non_existent_pages_visited $log_name $search_size
-elif [ "$1" == "--mrt" ]
-then
-	mrt $log_name $search_size
-elif [ "$1" == "--searchbot-request" ]
-then
-	search_bot_request $log_name $search_size
-else
-	echo -e "There is\033[31m no \033[0m$1 key"
-	exit 1
-fi
-
+case $1 in
+	--mrip) mrip $log_name $search_size;;
+        --mrpa) mrpa $log_name $search_size;;
+        --non-existent-pages-visited) non_existent_pages_visited $log_name $search_size;;
+	--mrt) mrt $log_name $search_size;;
+        --search-bot-request) search_bot_request $log_name $search_size;;
+	*) echo -e "There is\033[31m no \033[0m$1 key"
+esac
 exit 0
 ```
+-------
 
 </details>
 
@@ -177,5 +165,61 @@ exit 0
 ![script_b_mrt](screenshots/script_b_mrt.png)  
 ![script_b_searchbot_request](screenshots/script_b_searchbot_request.png)  
 
+SCRIPT_C
+---------
 
 
+<details><summary>script_c code</summary>
+
+```
+#!/bin/bash
+
+if [[ "$#" == "0" || "$#" == "1" ]]
+then
+  echo -e "\033[31m$0\033[0m has to take \033[31m2 parameters:\033[0m source, destination"
+  exit 1
+fi
+
+if [ ! -d "$1" ]
+then 
+  echo -e "ERROR.The source does not exist!"
+  exit 1
+elif [ ! -d "$2" ]
+then 
+  echo -e "The destination does not exist. Trying to create."
+  mkdir "$2"
+  if [ ! "$?" == "true" ]
+  then
+    echo -e "\033[32mThe destination was created\033[0m"
+  else
+    echo -e "\033[31mThe destination was not created!\033[0m"
+    exit 1
+  fi
+fi  
+
+source=$1
+destination=$2
+
+for file in $(find $source -printf "%P\n")
+do 
+if [ -a $source/$file ]
+then 
+  if [ $source/$file -nt $destination/$file ]
+  then 
+    echo "$file COPY"
+    cp -r $source/$file $destination/$file
+  else
+    echo "$file SKIP"
+  fi
+else
+  echo "$file COPY"
+  cp -r $source/$file $destination/$file
+fi
+done | sed -e '1iFILE STATUS' | sed -e '$aDONE' | column -t
+```
+-------
+
+</details>
+
+**The result:**  
+![script_c result](screenshots/script_c_result.png)  
