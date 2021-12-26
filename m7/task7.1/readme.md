@@ -261,3 +261,15 @@ cat /var/log/syslog | grep CRON
 ![crontab -e](screenshots/crontab_e.png)  
 ![grep cron](screenshots/grep_cron.png) 
 
+PATH
+---------
+
+***PATH*** is an environmental variable in Linux and other Unix-like operating systems that tells the shell which directories to *search for executable files*  
+To add my script to the PATH, I used:
+```
+PATH=$PATH:$HOME/bin
+```
+Now, I can execute them from everywhere:  
+![path](screenshots/path.png) 
+
+
