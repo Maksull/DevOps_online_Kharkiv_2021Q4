@@ -174,52 +174,90 @@ SCRIPT_C
 ```
 #!/bin/bash
 
+function destination_copy_skip_remove() {
+	#copy_skip
+	for file in $(find $1 -printf "%P\n")
+	do 
+	if [ ! -a $2/$file ]
+	then 
+	  if [ $1/$file -nt $2/$file ]
+	  then 
+	  	echo $3 $file COPY
+	    cp -r $1/$file $2/$file
+	  else
+	  	echo $3 $file SKIP
+	  fi
+	else
+		echo $3 $file COPY
+	  cp -r $1/$file $2/$file
+	fi
+	done
+	#delete
+	for file in $(find $2 -printf "%P\n")
+    do 
+    if [[ (( -a $2/$file) && (! -a $1/$file)) && ( "$file" != "backup_log" ) ]]
+    then 
+        echo $3 $file DELETE
+    	rm -r "$2/$file"
+    fi
+    done
+}
+
 if [[ "$#" == "0" || "$#" == "1" ]]
 then
-  echo -e "\033[31m$0\033[0m has to take \033[31m2 parameters:\033[0m source, destination"
-  exit 1
+	echo -e "\033[31m$0\033[0m has to take \033[31m2 parameters:\033[0m source, destination"
+	exit 1
 fi
 
 if [ ! -d "$1" ]
 then 
-  echo -e "ERROR.The source does not exist!"
-  exit 1
+	echo -e "ERROR.The source does not exist!"
+	exit 1
 elif [ ! -d "$2" ]
 then 
-  echo -e "The destination does not exist. Trying to create."
-  mkdir "$2"
-  if [ ! "$?" == "true" ]
-  then
-    echo -e "\033[32mThe destination was created\033[0m"
-  else
-    echo -e "\033[31mThe destination was not created!\033[0m"
-    exit 1
-  fi
-fi  
+	echo -e "The destination does not exist. Trying to create."
+	mkdir "$2"
+	if [ ! "$?" == "true" ]
+	then
+		echo -e "\033[32mThe destination was created\033[0m"
+	else
+		echo -e "\033[31mThe destination was not created!\033[0m"
+		exit 1
+	fi
+fi	
 
 source=$1
 destination=$2
+dt=$(date '+%d.%m.%Y/%H:%M:%S');
 
-for file in $(find $source -printf "%P\n")
-do 
-if [ -a $source/$file ]
-then 
-  if [ $source/$file -nt $destination/$file ]
-  then 
-    echo "$file COPY"
-    cp -r $source/$file $destination/$file
-  else
-    echo "$file SKIP"
-  fi
-else
-  echo "$file COPY"
-  cp -r $source/$file $destination/$file
-fi
-done | sed -e '1iFILE STATUS' | sed -e '$aDONE' | column -t
+destination_copy_skip_remove $source $destination $dt | awk 'BEGIN {print "\033[32mDATE FILE STATUS\033[0m"} {print $0} END {print "\033[32mDONE\033[0m"}' | column -t | tee -a $destination/backup_log
 ```
 -------
 
 </details>
 
 **The result:**  
-![script_c result](screenshots/script_c_result.png)  
+![script_c result1](screenshots/script_c_result1.png)  
+![script_c result2](screenshots/script_c_result2.png)  
+
+
+CRON
+---------
+The ***cron*** command-line utility is a *job scheduler*.
+To configure it, I use:
+```
+crontab -e
+```
+And then wrote inside it:
+```
+* * * * * /home/maksym/bin/script_c /home/maksym/test_dir /home/maksym/bin/test_dir_backup
+```
+```* * * * *``` - means that the scrip will be executed *every minute*  
+To see the log of CRON, I use:
+```
+cat /var/log/syslog | grep CRON
+```
+
+![crontab -e](screenshots/crontab_e.png)  
+![grep cron](screenshots/grep_cron.png) 
+
