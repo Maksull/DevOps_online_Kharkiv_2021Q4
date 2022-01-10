@@ -74,7 +74,7 @@ def main():
     print("-----------------")
     d = discriminant(a, b, c)
     print("The discriminant is: " + str(d))
-    root = roots(d, a, b, c)
+    root = roots(d, a, b)
     square_print(root)
     print(unit_test(a, b, c, root))
     exit(SUCCESS_EXIT)
