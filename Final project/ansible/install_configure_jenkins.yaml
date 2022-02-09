@@ -1,0 +1,13 @@
+---
+- name: Install Jenkins to the server
+  hosts: JENKINS_MASTER
+  any_errors_fatal: true
+  become: yes
+
+  roles:
+    - { role: install_java }
+    - { role: install_git }
+    - { role: install_jenkins }
+    - { role: jenkins_get_ssh_key }
+    - { role: jenkins_get_cli }
+    - { role: jenkins_install_plugins }

@@ -1,0 +1,9 @@
+---
+- block:
+    - name: Install GIT for RedHat
+      yum: name=git state=latest
+  when: ansible_os_family == "RedHat"
+- block:
+    - name: Install GIT for Debian
+      apt: name=git state=latest
+  when: ansible_os_family == "Debian"

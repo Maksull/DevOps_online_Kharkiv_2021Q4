@@ -1,0 +1,16 @@
+---
+- block:
+    - command: amazon-linux-extras install java-openjdk11=latest -y
+    - name: Install openjdk-11-jdk for RedHat
+      yum: name={{ item }} state=latest
+      loop:
+        - tree
+  when: ansible_os_family == "RedHat"
+
+- block:
+    - name: Install openjdk-11-jdk for Debian
+      apt: name={{ item }} state=latest
+      loop:
+        - openjdk-11-jdk
+        - tree
+  when: ansible_os_family == "Debian"

@@ -1,0 +1,8 @@
+---
+- name: Install GIT to the Jenkins server
+  hosts: JENKINS_MASTER
+  any_errors_fatal: true
+  become: yes
+
+  roles:
+    - { role: install_git }

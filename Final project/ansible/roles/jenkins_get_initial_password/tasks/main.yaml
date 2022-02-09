@@ -1,0 +1,5 @@
+---
+- shell: cat {{ path_initial_admin }}
+  register: admin_password
+- debug:
+    var: admin_password.stdout

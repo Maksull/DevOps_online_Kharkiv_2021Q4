@@ -1,0 +1,14 @@
+---
+plugin: aws_ec2
+region:
+  - eu-north-1
+filters:
+  tag:Author: Maksym Yuhov
+  tag:Project: EPAM Final project
+hostnames:
+  - ip-address
+groups:
+  WEB_SERVERS_REDHAT: "'Web server amazon' in tags.Type"
+  WEB_SERVERS_DEBIAN: "'Web server debian' in tags.Type"
+  JENKINS: "'Jenkins amazon' in tags.Type"
+  JENKINS_MASTER: "'Jenkins master server' in tags.Name"

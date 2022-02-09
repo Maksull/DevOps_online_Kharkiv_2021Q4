@@ -1,0 +1,9 @@
+---
+- name: Install Apache to the servers
+  hosts: WEB_SERVERS_REDHAT, WEB_SERVERS_DEBIAN
+  any_errors_fatal: true
+  become: yes
+
+  roles:
+    - { role: install_apache }
+    - { role: restart_enable_apache }

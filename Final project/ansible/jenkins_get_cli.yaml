@@ -1,0 +1,7 @@
+---
+- name: Get Jenkins cli
+  hosts: JENKINS_MASTER
+  become: yes
+
+  roles:
+    - { role: jenkins_get_cli }

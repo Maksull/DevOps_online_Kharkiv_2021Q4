@@ -1,0 +1,3 @@
+---
+- name: Copy the web page to the servers
+  copy: src={{ source_file }} dest={{ destin_file }} mode=0555

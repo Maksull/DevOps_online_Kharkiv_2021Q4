@@ -1,0 +1,18 @@
+---
+- block:
+    # Block for RedHat
+    - name: Install Apache web server for RedHat
+      yum: name={{ item }} state=latest
+      loop:
+        - httpd
+        - tree
+  when: ansible_os_family == "RedHat"
+
+- block:
+    #Block for Debian
+    - name: Install Apache web server for Debian
+      apt: name={{ item }} state=latest
+      loop:
+        - apache2
+        - tree
+  when: ansible_os_family == "Debian"

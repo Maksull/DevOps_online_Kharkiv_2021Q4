@@ -1,0 +1,8 @@
+---
+- name: Check and debug Linux version
+  debug: var="ansible_os_family"
+
+- include: install_apache.yml
+  notify:
+    - Restart Apache web server for RedHat
+    - Restart Apache web server for Debian

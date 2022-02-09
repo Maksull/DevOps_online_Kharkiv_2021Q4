@@ -1,0 +1,4 @@
+---
+- command: wget {{ inventory_hostname }}:8080/jnlpJars/jenkins-cli.jar
+  delegate_to: localhost
+- command: wget {{ inventory_hostname }}:8080/jnlpJars/jenkins-cli.jar

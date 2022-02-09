@@ -1,0 +1,7 @@
+---
+- name: Install plugin for Jenkins
+  hosts: JENKINS_MASTER
+  become: yes
+
+  roles:
+    - { role: jenkins_install_plugins }

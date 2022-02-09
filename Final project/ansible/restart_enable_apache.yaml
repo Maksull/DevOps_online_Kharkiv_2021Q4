@@ -1,0 +1,7 @@
+---
+- name: Upload web page
+  hosts: WEB_SERVERS_REDHAT, WEB_SERVERS_DEBIAN
+  become: yes
+
+  roles:
+    - { role: restart_enable_apache }
