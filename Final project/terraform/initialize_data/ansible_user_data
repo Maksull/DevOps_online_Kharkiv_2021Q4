@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo amazon-linux-extras install ansible2
+sudo yum -y install python-boto3
+sudo amazon-linux-extras install java-openjdk11=latest -y

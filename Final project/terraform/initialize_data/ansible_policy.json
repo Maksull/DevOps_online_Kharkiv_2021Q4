@@ -1,0 +1,23 @@
+{
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Action" : [
+          "ec2:Describe*",
+          "elasticloadbalancing:Describe*",
+          "cloudwatch:ListMetrics",
+          "cloudwatch:GetMetricStatistics",
+          "cloudwatch:Describe*",
+          "autoscaling:Describe*",
+          "elasticache:Describe*",
+          "rds:Describe*",
+          "rds:ListTagsForResource",
+          "cloudwatch:GetMetricStatistics",
+          "logs:DescribeLogStreams",
+          "logs:GetLogEvents"
+        ],
+        "Effect"   : "Allow",
+        "Resource" : "*"
+      }
+    ]
+}
