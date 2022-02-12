@@ -1,7 +1,5 @@
 provider "aws" {
-  access_key = "AKIA44O4ISZISKSB6F2S"
-  secret_key = "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"
-  region     = var.aws_region
+  region = var.aws_region
 }
 
 terraform {
@@ -103,7 +101,6 @@ resource "aws_instance" "jenkins" {
     "Name"    = "Jenkins master server",
     "Type"    = "Jenkins amazon",
     "OS_type" = "Amazon"
-
   })
 }
 

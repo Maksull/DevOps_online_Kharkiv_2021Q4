@@ -1,0 +1,5 @@
+---
+- name: Copy the web page to the servers
+  copy: src={{ source_file }} dest={{ destin_file }} mode=0555
+- name: Copy the web page to the containers
+  shell: docker cp {{ destin_file }}. apache_web_server:/usr/local/apache2/htdocs/

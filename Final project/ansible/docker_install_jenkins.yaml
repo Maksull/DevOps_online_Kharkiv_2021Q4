@@ -1,0 +1,7 @@
+---
+- name: Install Jenkins to Docker container
+  hosts: JENKINS_MASTER
+  become: yes
+
+  roles:
+    - { role: docker_install_jenkins }

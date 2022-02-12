@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // The ip address of Ansible server to send the project directory and then to the web servers
-        ansible_server = "13.49.175.213"
+        ansible_server = "16.170.108.113"
         // The credentials that used to connect Jenkins and GitHub repository
         github_credentials = "GitHub"
         // The link to the working repository (start from the username)
@@ -13,7 +13,6 @@ pipeline {
             steps {
                 // Connect to the GIT directory you work with
                 echo "Start of Stage Git"
-                echo "${repository_url}"
                 git branch: 'main', credentialsId: "${github_credentials}", url: "git@github.com:${repository_url}"  
                 sh 'sleep 7'
             }
@@ -33,7 +32,7 @@ pipeline {
                 // Send GIT repository that Ansible received to the Web servers
                 echo "Start of Stage Deploy"
                 sh '''
-                ssh -i ~/ansible.pem -o StrictHostKeyChecking=no ec2-user@${ansible_server} ansible-playbook -i /home/ec2-user/ansible/aws_ec2.yaml /home/ec2-user/ansible/upload_web_page.yaml
+                ssh -i ~/ansible.pem -o StrictHostKeyChecking=no ec2-user@${ansible_server} ansible-playbook -i /home/ec2-user/ansible/aws_ec2.yaml /home/ec2-user/ansible/docker_upload_web_page_container.yaml
                 '''
             }
         }

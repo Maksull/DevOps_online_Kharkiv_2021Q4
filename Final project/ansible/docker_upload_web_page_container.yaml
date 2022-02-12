@@ -1,0 +1,7 @@
+---
+- name: Install Apache to Docker container
+  hosts: WEB_SERVERS_REDHAT, WEB_SERVERS_DEBIAN
+  become: yes
+
+  roles:
+    - { role: docker_upload_web_page_container }

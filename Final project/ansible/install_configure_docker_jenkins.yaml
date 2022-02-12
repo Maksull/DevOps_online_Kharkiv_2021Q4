@@ -1,0 +1,13 @@
+---
+- name: Install Jenkins into the Docker container in the server
+  hosts: JENKINS_MASTER
+  any_errors_fatal: true
+  become: yes
+
+  roles:
+    - { role: install_docker }
+    - { role: docker_install_jenkins }
+    - { role: docker_jenkins_get_ssh_key }
+    - { role: jenkins_get_cli }
+    - { role: docker_jenkins_install_plugins }
+    - { role: docker_jenkins_get_initial_password }

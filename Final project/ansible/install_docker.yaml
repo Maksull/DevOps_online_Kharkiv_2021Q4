@@ -1,0 +1,7 @@
+---
+- name: Install Docker to the servers
+  hosts: JENKINS_MASTER, WEB_SERVERS_REDHAT, WEB_SERVERS_DEBIAN
+  become: yes
+
+  roles:
+    - { role: install_docker }

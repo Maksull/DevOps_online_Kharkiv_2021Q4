@@ -1,0 +1,6 @@
+---
+- name: Get initial password
+  shell: docker exec -it jenkins_master cat /var/jenkins_home/secrets/initialAdminPassword
+  register: jenkins_initial_password
+- debug:
+    var: jenkins_initial_password.stdout

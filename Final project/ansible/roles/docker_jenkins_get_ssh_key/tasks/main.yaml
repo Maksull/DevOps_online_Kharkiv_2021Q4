@@ -1,0 +1,26 @@
+---
+- name: Copy ansible.pem to Jenkins server
+  copy:
+    src: /home/ec2-user/ansible/ansible.pem
+    dest: /home/ec2-user/ansible.pem
+    owner: ec2-user
+    group: ec2-user
+    mode: 0400
+- name: Copy ansible.pem from Jenkins server to Jenkins container
+  shell: docker cp /home/ec2-user/ansible.pem jenkins_master:/var/jenkins_home/ansible.pem
+- name: Generate SSH keypair in order to connect Jenkins and Github
+  community.crypto.openssh_keypair:
+    path: /home/ec2-user/.ssh/jenkins_ssh_key
+    mode: "400"
+    owner: ec2-user
+    group: ec2-user
+- name: Copy Jenkins SSH key to Ansible server
+  ansible.builtin.fetch:
+    src: /home/ec2-user/.ssh/jenkins_ssh_key
+    dest: /home/ec2-user/ansible/jenkins_ssh_key
+    flat: yes
+- name: Copy Jenkins SSH key.pub to Ansible server
+  ansible.builtin.fetch:
+    src: /home/ec2-user/.ssh/jenkins_ssh_key.pub
+    dest: /home/ec2-user/ansible/jenkins_ssh_key.pub
+    flat: yes

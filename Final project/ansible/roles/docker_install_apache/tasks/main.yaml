@@ -1,0 +1,3 @@
+---
+- name: Install Apache
+  shell: docker run -d --name apache_web_server -p 80:80 httpd
