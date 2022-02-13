@@ -1,7 +1,11 @@
 ---
-- name: Install Apache
-  shell: docker run -d --name apache_web_server -p 80:80 httpd
 - name: Generate default web page for web server
   template: src=index.j2 dest={{ default_web_page }} mode=0555
-- name: Copy default web page to the container
-  shell: docker cp {{ default_web_page }} apache_web_server:/usr/local/apache2/htdocs/index.html
+- name: Copy Docker files to the server
+  copy: src=./Docker/. dest=/home/ec2-user/ mode=0555
+- name: Build an Apache image
+  shell: docker build -t apache_web_server .
+- name: Build an Apache web server image
+  shell: docker build -t apache_web_server .
+- name: Run a Apache web server container
+  shell: docker-compose -f Apache-docker-compose.yaml up -d

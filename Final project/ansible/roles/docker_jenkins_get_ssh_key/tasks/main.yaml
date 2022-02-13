@@ -7,7 +7,7 @@
     group: ec2-user
     mode: 0400
 - name: Copy ansible.pem from Jenkins server to Jenkins container
-  shell: docker cp /home/ec2-user/ansible.pem jenkins_master:/var/jenkins_home/ansible.pem
+  shell: docker cp /home/ec2-user/ansible.pem ec2-user_jenkins_master_1:/var/jenkins_home/ansible.pem
 - name: Generate SSH keypair in order to connect Jenkins and Github
   community.crypto.openssh_keypair:
     path: /home/ec2-user/.ssh/jenkins_ssh_key

@@ -1,5 +1,7 @@
 ---
+- name: Copy Jenkins docker-compose file to the server
+  copy: src=./Docker/Jenkins-docker-compose.yaml dest=/home/ec2-user/Jenkins-docker-compose.yaml  mode=0555
 - name: Install Jenkins
-  shell: docker run -d --name jenkins_master -p 8080:8080 jenkins/jenkins
+  shell: docker-compose -f Jenkins-docker-compose.yaml up -d
 - pause:
-    minutes: 2
+    minutes: 1

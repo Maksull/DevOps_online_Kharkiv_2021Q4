@@ -1,5 +1,5 @@
 ---
-- shell: docker exec -it jenkins_master cat {{ path_initial_admin }}
+- shell: docker exec -it ec2-user_jenkins_master_1 cat {{ path_initial_admin }}
   register: admin_password
 - set_fact: admin_password={{ admin_password.stdout }}
 - shell: java -jar jenkins-cli.jar -auth admin:{{ admin_password }} -s http://{{ inventory_hostname }}:8080 install-plugin {{ item }}
@@ -10,4 +10,4 @@
     - Pipeline
   delegate_to: localhost
 - name: Restart Jenkins
-  shell: docker restart jenkins_master
+  shell: docker restart ec2-user_jenkins_master_1
