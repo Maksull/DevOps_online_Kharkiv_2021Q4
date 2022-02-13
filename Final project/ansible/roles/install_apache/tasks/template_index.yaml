@@ -1,0 +1,3 @@
+---
+- name: Generate default index.html
+  template: src=index.j2 dest={{ destin_file }}./index.html mode=0555
