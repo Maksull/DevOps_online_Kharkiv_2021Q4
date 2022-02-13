@@ -63,7 +63,7 @@ Attachments:
 ## ANSIBLE
 
   
-***Ansible server***, by default, has *17* playbooks: ** install_docker, docker_install_apache, install_apache, docker_install_configure_jenkins, install_configure_jenkins, install_git, install_java, docker_install_jenkins, install_jenkins, jenkins_get_cli, docker_jenkins_get_initial_password, jenkins_get_initial_password, docker_jenkins_install_plugins, jenkins_install_plugins, ping, restart_enable_apache, upload_web_page**.  
+***Ansible server***, by default, has *17* playbooks: **install_docker, docker_install_apache, install_apache, docker_install_configure_jenkins, install_configure_jenkins, install_git, install_java, docker_install_jenkins, install_jenkins, jenkins_get_cli, docker_jenkins_get_initial_password, jenkins_get_initial_password, docker_jenkins_install_plugins, jenkins_install_plugins, ping, restart_enable_apache, upload_web_page**.  
   
 
 Playbook ```install_configure_jenkins(docker_install_configure_jenkins)``` install **Jenkins** and make basic configuration of it.   
@@ -86,6 +86,13 @@ After you run ```install_configure_jenkins(docker_install_configure_jenkins)``` 
   
 </details>
 
+## DOCKER
+  
+  
+After you run ```ansible-playbook -i aws_ec2.yaml install_docker``` on **Ansible** server the *Jenkins server and Web servers* will have ```Docker engine``` installed.  
+After you run ```ansible-playbook -i aws_ec2.yaml docker_install_apache``` on **Ansible** server the *Web servers* will have running ```Apache container```.  
+After you run ```ansible-playbook -i aws_ec2.yaml docker_install_jenkins``` on **Ansible** server the "Jenkins server" will have running ```Jenkins container```.  
+  
 ## JENKINS
 
   
