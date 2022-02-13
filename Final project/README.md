@@ -1,21 +1,37 @@
 # Final project
 
 Yuhov Maksym. EPAM final project.  
-Technology: Terraform, Ansible, Jenkins
+Technology: Terraform, Docker, Jenkins, Ansible, AWS
 
 ## TERRAFORM
 
 ### **Terraform root module**  
   
   
-Create : **Jenkins master server, Ansible server, launch configuration for web servers, elastic load balancer for web servers, at leaset two web servers in AWS Autoscaling group**.
+Modules: ```root, seucrity_group, iam_role, shh_key```.  
+root module : **Jenkins master server, Ansible server, launch configuration for web servers, elastic load balancer for web servers, at leaset two web servers in AWS Autoscaling group**.  
 
-***The Ansible server*** is used to manage **all** servers, including installation ```java``` and ```jenkins``` on ***Jenkins server***.  
-  
+- ```Jenkins master server``` - server with Jenkins (can be in container)  
+- ```Ansible server``` - server with Ansible and playbooks. This server is used to manage **all** servers.    
+- ```Launch configuration for web servers``` - the settings for the instances in **web servers autoscaling group**  
+- ```Web servers autoscaling group``` - autoscaling group for web servers  
+- ```Elastic load balancer for web servers``` - check the health of instances in **autoscaling group**
+
+securit_group module: securit groups for **jenkins, ansible, web server** instances.
+
+- ```Jenkins security group``` - has opened **22, 8080** ports
+- ```Ansible security group``` - has opened **22** port
+- ```Web server security group``` - has opened **22, 80, 443** port
+
+iam_role module: **iam police, iam role, instance profile**  
+
+- ```iam policy``` - the policy for the iam role
+- ```iam role``` - the role that allow Ansible to pase the aws data  
+- ```instance profile``` - a container for an IAM role that is used to pass role information to an Ansible instance  
   
 ### **Terraform ssh_key module**
   
-  
+ 
 Generate three keys: **ansible_connection, jenkins_connection, web_server_connection**.
   
 Attachments:
@@ -30,10 +46,9 @@ Save in:
 
 ### **Terraform iam_role module**
   
-  
-Create one AWS IAM role: **ansible_role**.
-
-***ansible_role*** is attached to the ```aws_instance.ansible``` to make it possible to use Ansible plugin ```aws_ec2```, which is used for dynamic inventory.
+```ansible_policy``` contains the policy that allows Ansible server to parse data about EC2 instances, attached to the ```ansible_role```  
+```ansible_role``` is attached to the ```ansible_profile```, that is used to pass role information to an Ansible instance    
+```ansible_profile``` is attached to the ```ansible``` server, to make it possible to use Ansible plugin ```aws_ec2```, which is used for dynamic inventory.  
 
 ### **Terraform security_group module**
   
