@@ -53,7 +53,7 @@ Save in:
 ### **Terraform security_group module**
   
 
-Create three aws_security_group: **web_server, ansible, jenkins**.
+Create three aws_security_groups: **web_server, ansible, jenkins**.
   
 Attachments:
 - ***web_server*** is attached to the ```aws_launch_configuration.web_server```  
@@ -63,14 +63,14 @@ Attachments:
 ## ANSIBLE
 
   
-***Ansible server***, by default, has *11* playbooks: **install_configure_jenkins, install_apache, install_java, install_jenkins, jenkins_get_cli, jenkins_get_initial_password, jenkins_install_plugins, ping, restart_enable_apache, upload_web_page, install_git**.  
+***Ansible server***, by default, has *17* playbooks: ** install_docker, docker_install_apache, install_apache, docker_install_configure_jenkins, install_configure_jenkins, install_git, install_java, docker_install_jenkins, install_jenkins, jenkins_get_cli, docker_jenkins_get_initial_password, jenkins_get_initial_password, docker_jenkins_install_plugins, jenkins_install_plugins, ping, restart_enable_apache, upload_web_page**.  
   
 
-Playbook ```install_configure_jenkins``` install **Jenkins** and make basic configuration of it.   
+Playbook ```install_configure_jenkins(docker_install_configure_jenkins)``` install **Jenkins** and make basic configuration of it.   
 To run ***it*** you need first of all run: ```bash install_ansible_plugins.sh```. It will install plugins for ansible.  
 After that you will be able to execute ```ansible-playbook -i aws_ec2.yaml install_configure_jenkins.aml```.  
 
-After you run ```install_configure_jenkins``` execute:
+After you run ```install_configure_jenkins(docker_install_configure_jenkins)``` the next roles will be executed:
 1.  ```install_java``` - install **java** on *Jenkins master and jenkin's nodes*;
 2.  ```install_git``` - install **git** on *Jenkins master* to work with GitHub;
 3.  ```install_jenkins``` - install **Jenkins** on *Jenkins master server*;
